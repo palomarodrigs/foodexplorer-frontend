@@ -28,6 +28,9 @@ export default createGlobalStyle`
     button, a {
         cursor: pointer;
         transition: filter 0.2s;
+
+         border: none;
+         background: transparent;
     }
 
     button:hover, a:hover {
