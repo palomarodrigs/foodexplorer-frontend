@@ -20,6 +20,8 @@ export const Container = styled.div`
     h1 {
       font-size: 24px;
       font-weight: 700;
+
+      white-space: nowrap;
     }
 
     img {
@@ -73,7 +75,6 @@ export const Container = styled.div`
 
       h1 {
         font-size: 21px;
-        white-space: nowrap;
       }
 
       img {

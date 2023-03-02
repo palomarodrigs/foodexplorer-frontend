@@ -45,7 +45,8 @@ export const Container = styled.div`
 
 export const Form = styled.form`
   width: 476px;
-  height: 715px;
+  height: 621px;
+
   padding: 64px;
 
   display: flex;
@@ -53,7 +54,7 @@ export const Form = styled.form`
   align-items: center;
   justify-content: center;
 
-  margin: 80px 230px;
+  margin: 60px 108px;
 
   h1 {
     margin-bottom: 32px;
@@ -73,7 +74,7 @@ export const Form = styled.form`
   }
 
   button {
-    margin-top: 32px;
+    padding: 12px 32px;
   }
 
   a {

@@ -53,7 +53,7 @@ export const Form = styled.form`
   align-items: center;
   justify-content: center;
 
-  margin: 108px 230px;
+  margin: 60px 108px;
 
   h1 {
     margin-bottom: 32px;

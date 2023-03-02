@@ -10,9 +10,13 @@ export default createGlobalStyle`
     body {
         background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
         color: ${({ theme }) => theme.COLORS.LIGHT_100};
-        overflow: hidden;
+        /* overflow: hidden; */
 
         -webkit-font-smoothing: antialiased;
+    }
+
+     p {
+        color: ${({ theme }) => theme.COLORS.TITLE_200};
     }
 
     body, input, button, textarea {
@@ -46,4 +50,6 @@ export default createGlobalStyle`
         background-color: ${({ theme }) => theme.COLORS.PINK};
         outline: 1px solid slategrey;
     } */
+
+   
 `
