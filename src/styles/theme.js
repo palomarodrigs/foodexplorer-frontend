@@ -1,8 +1,8 @@
 export default {
   COLORS: {
-    LIGHT_100: '#FFFFFF',
     TITLE_200: '#E1E1E6',
 
+    LIGHT_100: '#FFFFFF',
     LIGHT_600: '#FFFAF1',
     LIGHT_200: '#C4C4CC',
     LIGHT_300: '#7C7C8A',
@@ -16,6 +16,7 @@ export default {
     DARK_900: '#192227',
     DARK_800: '#00111A',
     DARK_700: '#0D161B',
+    DARK_300: '#000204',
 
     RED_100: '#AB4D55',
     RED_200: '#750310',

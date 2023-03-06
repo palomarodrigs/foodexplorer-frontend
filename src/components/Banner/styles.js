@@ -10,7 +10,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: flex-end;
 
-  margin: 164px auto 63px;
+  margin: 164px auto 0;
 
   border-radius: 8px;
   background: ${({ theme }) => theme.COLORS.GRADIENTS_200};
@@ -43,7 +43,7 @@ export const Container = styled.div`
     width: 376px;
     height: 120px;
 
-    margin-top: 44px;
+    margin: 44px 0 0;
     border-radius: 2px;
 
     > img {

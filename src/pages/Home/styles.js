@@ -4,18 +4,26 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
+  overflow: hidden;
+
   > main {
     padding: 0 123px;
 
-    overflow: auto;
+    overflow-y: auto;
 
-    span {
-      font-weight: 500;
-      font-size: 32px;
+    .content {
+      display: flex;
+      justify-content: center;
+    }
+  }
 
-      margin-bottom: 23px;
+  @media (max-width: 480px) {
+    main {
+      padding: 15px;
 
-      display: inline-block;
+      .content {
+        justify-content: flex-start;
+      }
     }
   }
 `

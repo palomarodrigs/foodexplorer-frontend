@@ -1,14 +1,12 @@
 import { Container } from './styles'
 
-import { RxCaretLeft } from 'react-icons/rx'
-import { FiMinus, FiPlus } from 'react-icons/fi'
+import { FiChevronLeft } from 'react-icons/fi'
 
 import { Header } from '../../components/Header'
 import { Tag } from '../../components/Tag'
+import { Stepper } from '../../components/Stepper'
 import { Button } from '../../components/Button'
 import { Footer } from '../../components/Footer'
-
-import { Link } from 'react-router-dom'
 
 import Ravanello from '../../assets/ravanello.png'
 
@@ -20,7 +18,7 @@ export function DishPreview() {
       <main>
         <div className='top'>
           <a>
-            <RxCaretLeft size={32} />
+            <FiChevronLeft size={32} />
             return
           </a>
           <img src={Ravanello} alt='dish ravanello' />
@@ -40,22 +38,9 @@ export function DishPreview() {
             <Tag title='jdfhe' />
           </div>
 
-          <div className='purchase'>
-            <div className='stepper'>
-              <button>
-                <FiMinus size={25} />
-              </button>
-
-              <span>01</span>
-
-              <button>
-                <FiPlus size={25} />
-              </button>
-            </div>
-
-            <div className='btn-include'>
-              <Button title='include ∙ $25' />
-            </div>
+          <div className='btns'>
+            <Stepper />
+            <Button className='include' title='include &middot; $25,00' />
           </div>
         </div>
       </main>

@@ -8,6 +8,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   /* justify-content: space-between; */
+  gap: 32px;
 
   padding: 24px 123px;
 
@@ -46,11 +47,22 @@ export const Container = styled.div`
 
   .logout {
     width: 30px;
-    margin-left: 32px;
 
     > svg {
       font-size: 30px;
       color: ${({ theme }) => theme.COLORS.LIGHT_100};
+    }
+  }
+
+  a {
+    /* width: 70px; */
+
+    img {
+      width: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+
+      border: 1px solid ${({ theme }) => theme.COLORS.LIGHT_500};
     }
   }
 

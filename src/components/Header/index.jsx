@@ -6,6 +6,7 @@ import Receipt from '../../assets/receipt.svg'
 
 import { Input } from '../Input'
 import { Button } from '../Button'
+import { Link } from 'react-router-dom'
 
 export function Header() {
   return (
@@ -22,6 +23,10 @@ export function Header() {
       </div>
 
       <Button title='Requests (0)' />
+
+      <a>
+        <img src='https://github.com/palomarodrigs.png' alt='' />
+      </a>
 
       <button className='logout'>
         <FiLogOut />

@@ -48,36 +48,22 @@ export const Container = styled.div`
 
         margin-bottom: 24px;
       }
-    }
 
-    .purchase {
-      display: flex;
-      align-items: center;
+      .btns {
+        display: flex;
+        align-items: center;
+        /* gap: 18px; */
 
-      margin-top: 48px;
+        margin-top: 48px;
 
-      gap: 36px;
-    }
+        .include {
+          width: 162px;
+          height: 48px;
+          font-weight: 500;
+          font-size: 14px;
 
-    .stepper {
-      display: flex;
-      align-items: center;
-      gap: 17px;
-
-      button {
-        color: ${({ theme }) => theme.COLORS.LIGHT_100};
-      }
-
-      span {
-        font-family: 'Roboto';
-        font-size: 20px;
-        font-weight: 700;
-      }
-    }
-
-    .btn-include {
-      button {
-        padding: 12px 24px;
+          margin-left: 36px;
+        }
       }
     }
   }
@@ -124,15 +110,24 @@ export const Container = styled.div`
           flex-wrap: wrap;
           gap: 24px;
         }
-      }
 
-      .purchase {
-        justify-content: center;
+        .btns {
+          display: flex;
+          align-items: center;
+          /* gap: 18px; */
 
-        margin-bottom: 54px;
+          margin-top: 48px;
+
+          .include {
+            width: 162px;
+            height: 48px;
+            font-size: 11px;
+
+            margin-left: 36px;
+          }
+        }
       }
     }
-
     footer {
       position: initial;
     }

@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 export const Container = styled.footer`
-  width: 100%;
+  width: 100vw;
   height: 77px;
 
-  /* position: absolute; */
+  position: absolute;
   bottom: 0;
 
   display: flex;
