@@ -1,5 +1,7 @@
 import Slider from '../../components/Slider'
 import { SwiperSlide } from 'swiper/react'
+import { Stepper } from '../Stepper'
+import { Button } from '../Button'
 
 import { Container } from './styles'
 
@@ -18,6 +20,7 @@ import Tea from '../../assets/tea.png'
 import Espresso from '../../assets/espresso.png'
 
 import { FiHeart } from 'react-icons/fi'
+import { data } from './data'
 
 export function Carousel() {
   const settings = {
@@ -36,7 +39,9 @@ export function Carousel() {
   return (
     <Container>
       <Slider title='Meals' settings={settings}>
-        <CardCarousel />
+        {data.map((item, i) => (
+          <CardCarousel key={i} props={item} />
+        ))}
       </Slider>
 
       <Slider title='Desserts' settings={settings}>

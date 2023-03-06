@@ -13,7 +13,9 @@ export function Home() {
       <main>
         <Banner />
 
-        <div className='content'>{/* <Carousel /> */}</div>
+        <div className='content'>
+          <Carousel />
+        </div>
       </main>
 
       <Footer />

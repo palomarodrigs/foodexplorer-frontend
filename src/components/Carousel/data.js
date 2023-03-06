@@ -9,8 +9,7 @@ export const data = [
     image: Spaghetti,
     title: 'Spaguetti Gambe',
     description: 'Fresh pasta with prawns and pesto.',
-    price: '$79,97',
-    isAdmin: true
+    price: '$79,97'
   },
   {
     image: Parma,
