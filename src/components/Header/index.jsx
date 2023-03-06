@@ -22,15 +22,17 @@ export function Header() {
         <Input icon={FiSearch} placeholder='Search for dishes or ingredients' />
       </div>
 
-      <Button title='Requests (0)' />
+      <div className='content'>
+        <Button title='Requests (0)' />
 
-      <a>
-        <img src='https://github.com/palomarodrigs.png' alt='' />
-      </a>
+        <button className='logout'>
+          <FiLogOut />
+        </button>
 
-      <button className='logout'>
-        <FiLogOut />
-      </button>
+        <a>
+          <img src='https://github.com/palomarodrigs.png' alt='' />
+        </a>
+      </div>
 
       <button className='receipt-mobile'>
         <img src={Receipt} alt='' />

@@ -7,7 +7,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   gap: 32px;
 
   padding: 24px 123px;
@@ -17,6 +17,7 @@ export const Container = styled.div`
   .logo {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
 
     h1 {
       font-size: 24px;
@@ -32,13 +33,15 @@ export const Container = styled.div`
   }
 
   .search {
-    width: 581px;
-
-    margin: 0 43px;
-
     input {
-      width: 581px;
+      width: 600px;
     }
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    gap: 32px;
   }
 
   button {
@@ -79,20 +82,9 @@ export const Container = styled.div`
 
     display: flex;
     align-items: center;
+    gap: 32px;
 
     padding: 64px 28px;
-
-    .logo {
-      margin: 0 60px;
-
-      h1 {
-        font-size: 21px;
-      }
-
-      img {
-        width: 24px;
-      }
-    }
 
     .menu-mobile {
       display: flex;
@@ -104,7 +96,21 @@ export const Container = styled.div`
       background-color: transparent;
     }
 
+    .logo {
+      h1 {
+        font-size: 21px;
+      }
+
+      img {
+        width: 24px;
+      }
+    }
+
     .search {
+      display: none;
+    }
+
+    .content {
       display: none;
     }
 
@@ -115,10 +121,6 @@ export const Container = styled.div`
       > img {
         width: 30px;
       }
-    }
-
-    button {
-      display: none;
     }
   }
 `
