@@ -12,6 +12,8 @@ export default createGlobalStyle`
         color: ${({ theme }) => theme.COLORS.LIGHT_100};
         /* overflow: hidden; */
 
+        width: 100%;
+        height: 100%;
         -webkit-font-smoothing: antialiased;
     }
 
@@ -27,6 +29,7 @@ export default createGlobalStyle`
 
     a {
         text-decoration: none;
+        list-style: none;
     }
 
     button, a {
@@ -41,15 +44,12 @@ export default createGlobalStyle`
         filter: brightness(0.9)
     }
     
-    /* ::-webkit-scrollbar {
+    ::-webkit-scrollbar {
          width: 0.5rem;
     }
 
     ::-webkit-scrollbar-thumb {
-        border-radius: 8px;
-        background-color: ${({ theme }) => theme.COLORS.PINK};
-        outline: 1px solid slategrey;
-    } */
-
-   
+        border-radius: 6px;
+        background-color: ${({ theme }) => theme.COLORS.CAKE_200};
+    }
 `

@@ -1,42 +1,56 @@
 import { FiSearch, FiLogOut, FiMenu } from 'react-icons/fi'
-import { Container } from './styles'
-
-import Logo from '../../assets/logo.svg'
 import Receipt from '../../assets/receipt.svg'
 
-import { Input } from '../Input'
-import { Button } from '../Button'
+import { Container } from './styles'
 import { Link } from 'react-router-dom'
 
+import { LogoAdmin } from '../LogoAdmin'
+import { Logo } from '../Logo'
+import { Input } from '../Input'
+import { Button } from '../Button'
+import { ButtonText } from '../ButtonText'
+
 export function Header() {
+  const isAdmin = false
+
   return (
     <Container>
       <Button className='menu-mobile' icon={FiMenu} />
 
-      <div className='logo'>
-        <img src={Logo} alt='logo explorer' />
-        <h1>food explorer</h1>
-      </div>
+      <div className='logo'>{isAdmin ? <LogoAdmin /> : <Logo />}</div>
 
       <div className='search'>
         <Input icon={FiSearch} placeholder='Search for dishes or ingredients' />
       </div>
 
+      {isAdmin ? (
+        ''
+      ) : (
+        <div className='btns'>
+          <ButtonText title='My favorites' />
+          <ButtonText title='Order history' />
+        </div>
+      )}
+
       <div className='content'>
-        <Button title='Requests (0)' />
+        {isAdmin ? <Button className='new' title='New dish' /> : <Button title='Requests (0)' />}
 
         <button className='logout'>
           <FiLogOut />
         </button>
 
-        <a>
-          <img src='https://github.com/palomarodrigs.png' alt='' />
-        </a>
+        <Link to='/profile'>
+          <img className='profile' src='https://github.com/palomarodrigs.png' alt='' />
+        </Link>
       </div>
 
-      <button className='receipt-mobile'>
-        <img src={Receipt} alt='' />
-      </button>
+      {isAdmin ? (
+        ''
+      ) : (
+        <button className='receipt-mobile'>
+          <img src={Receipt} alt='' />
+        </button>
+      )}
     </Container>
   )
 }

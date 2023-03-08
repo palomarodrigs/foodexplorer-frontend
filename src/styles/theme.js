@@ -21,7 +21,8 @@ export default {
     RED_100: '#AB4D55',
     RED_200: '#750310',
 
-    CAKE: '#82F3FF',
+    CAKE_100: '#82F3FF',
+    CAKE_200: '#065E7C',
 
     GRADIENTS_100: 'linear-gradient(90deg, rgba(0, 10, 15, 0.272541) 0%, #000A0F 100%)',
     GRADIENTS_200: 'linear-gradient(180deg, #091E26 0%, #00131C 100%)'

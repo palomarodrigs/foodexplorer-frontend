@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom'
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
 
-import Logo from '../../assets/logo.svg'
+import LogoExplorer from '../../assets/logo-explorer.svg'
 
 export function SignIn() {
   return (
     <Container>
       <div className='header'>
-        <img src={Logo} alt='logo explorer' />
+        <img src={LogoExplorer} alt='logo explorer' />
         <h1>food explorer</h1>
       </div>
 

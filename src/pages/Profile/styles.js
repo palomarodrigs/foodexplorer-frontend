@@ -1,11 +1,14 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+  height: 100vh;
+
+  display: grid;
+  grid-template-rows: 114px auto;
+  grid-template-areas: 'header' 'form';
 
   > header {
+    grid-area: header;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,11 +41,16 @@ export const Container = styled.div`
 `
 
 export const Form = styled.div`
+  grid-area: form;
   width: 360px;
-  margin: 0 auto;
+  margin: 0 auto 210px;
 
   > div:nth-child(4) {
     margin-top: 24px;
+  }
+
+  @media (max-width: 480px) {
+    margin: 0 auto 240px;
   }
 `
 

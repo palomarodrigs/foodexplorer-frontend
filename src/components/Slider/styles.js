@@ -8,13 +8,12 @@ export const Container = styled.div`
     margin: 47px 0 23px;
   }
 
-  .swiper {
-    width: 1122px;
-    background-color: red;
-  }
-
   .title:nth-child(1) {
     margin: 62px 0 23px;
+  }
+
+  .swiper {
+    width: 1122px;
   }
 
   .swiper:last-child {
@@ -47,15 +46,22 @@ export const Container = styled.div`
       }
     }
 
-    > img {
-      width: 176px;
-    }
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
 
-    > h2 {
-      font-weight: 700;
-      font-size: 24px;
+      > img {
+        width: 176px;
+      }
 
-      color: ${({ theme }) => theme.COLORS.LIGHT_100};
+      > h2 {
+        font-weight: 700;
+        font-size: 24px;
+
+        color: ${({ theme }) => theme.COLORS.LIGHT_100};
+      }
     }
 
     > p {
@@ -74,7 +80,7 @@ export const Container = styled.div`
 
       margin-bottom: 15px;
 
-      color: ${({ theme }) => theme.COLORS.CAKE};
+      color: ${({ theme }) => theme.COLORS.CAKE_100};
     }
 
     .btns {
@@ -98,25 +104,27 @@ export const Container = styled.div`
     }
 
     .swiper {
-      width: 210px;
-      height: 341px;
+      width: 383px;
+      height: 292px;
     }
 
     .swiper-slide {
-      /* width: 210px; */
+      max-width: 210px;
       height: 292px;
 
       .favorite {
         right: 16px;
       }
 
-      img {
-        width: 88px;
-      }
+      a {
+        img {
+          width: 88px;
+        }
 
-      h2 {
-        font-weight: 500;
-        font-size: 14px;
+        h2 {
+          font-weight: 500;
+          font-size: 14px;
+        }
       }
 
       p {

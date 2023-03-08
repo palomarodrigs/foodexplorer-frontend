@@ -2,23 +2,27 @@ import { Container } from './styles'
 
 import { Header } from '../../components/Header'
 import { Banner } from '../../components/Banner'
-import { Carousel } from '../../components/Carousel'
 import { Footer } from '../../components/Footer'
+import { Carousel } from '../../components/Carousel'
 
 export function Home() {
+  const isEdit = false
+
   return (
     <Container>
       <Header />
 
       <main>
-        <Banner />
-
         <div className='content'>
-          <Carousel />
-        </div>
-      </main>
+          <Banner className='banner' />
 
-      <Footer />
+          <div className='carousels'>
+            <Carousel isEdit={isEdit} />
+          </div>
+        </div>
+
+        <Footer />
+      </main>
     </Container>
   )
 }

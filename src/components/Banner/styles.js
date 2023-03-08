@@ -40,7 +40,7 @@ export const Container = styled.div`
   }
 
   @media (max-width: 480px) {
-    width: 376px;
+    width: 383px;
     height: 120px;
 
     margin: 44px 0 0;

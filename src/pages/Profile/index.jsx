@@ -5,13 +5,17 @@ import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
 import { Footer } from '../../components/Footer'
 
+import { Link } from 'react-router-dom'
+
 export function Profile() {
   return (
     <Container>
       <header>
-        <button type='button'>
-          <FiChevronLeft size={32} />
-        </button>
+        <Link to='/'>
+          <button type='button'>
+            <FiChevronLeft size={32} />
+          </button>
+        </Link>
 
         <button className='logout' type='button'>
           <FiLogOut size={25} />

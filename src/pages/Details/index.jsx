@@ -1,6 +1,7 @@
-import { Container } from './styles'
-
 import { FiChevronLeft } from 'react-icons/fi'
+
+import { Container } from './styles'
+import { Link } from 'react-router-dom'
 
 import { Header } from '../../components/Header'
 import { Tag } from '../../components/Tag'
@@ -10,17 +11,20 @@ import { Footer } from '../../components/Footer'
 
 import Ravanello from '../../assets/ravanello.png'
 
-export function DishPreview() {
+export function Details() {
+  const isAdmin = false
+
   return (
-    <Container>
+    <Container isAdmin={isAdmin}>
       <Header />
 
       <main>
         <div className='top'>
-          <a>
+          <Link to='/'>
             <FiChevronLeft size={32} />
             return
-          </a>
+          </Link>
+
           <img src={Ravanello} alt='dish ravanello' />
         </div>
 
@@ -38,10 +42,14 @@ export function DishPreview() {
             <Tag title='jdfhe' />
           </div>
 
-          <div className='btns'>
-            <Stepper />
-            <Button className='include' title='include &middot; $25,00' />
-          </div>
+          {isAdmin ? (
+            <Button className='edit' title='Edit dish' />
+          ) : (
+            <div className='btns'>
+              <Stepper />
+              <Button className='include' title='include &middot; $25' />
+            </div>
+          )}
         </div>
       </main>
 
