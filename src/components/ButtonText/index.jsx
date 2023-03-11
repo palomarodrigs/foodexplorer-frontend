@@ -1,8 +1,9 @@
 import { Container } from './styles'
 
-export function ButtonText({ title, loading = false, ...rest }) {
+export function ButtonText({ title, icon: Icon, ...rest }) {
   return (
-    <Container type='button' disabled={loading} {...rest}>
+    <Container type='button' {...rest}>
+      {Icon && <Icon size={20} />}
       {title}
     </Container>
   )

@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
 import { FiHeart, FiEdit } from 'react-icons/fi'
+import { Link } from 'react-router-dom'
 
 import { SwiperSlide } from 'swiper/react'
 import Slider from '../../Slider'
@@ -10,6 +10,7 @@ import { Button } from '../../Button'
 const settings = {
   spaceBetween: 27,
   navigation: true,
+  loop: true,
   breakpoints: {
     480: {
       slidesPerView: 2
@@ -24,7 +25,15 @@ const CardCarousel = ({ props, title, isEdit }) => (
   <Slider title={title} settings={settings}>
     {props.map((item, i) => (
       <SwiperSlide key={i}>
-        <button className='favorite'>{isEdit ? <FiEdit /> : <FiHeart />}</button>
+        <button className='favorite'>
+          {isEdit ? (
+            <Link to='/edit'>
+              <FiEdit />
+            </Link>
+          ) : (
+            <FiHeart />
+          )}
+        </button>
 
         <Link to='/details'>
           <img src={item.image} alt={item.name} />

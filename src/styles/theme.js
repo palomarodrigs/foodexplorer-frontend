@@ -3,11 +3,11 @@ export default {
     TITLE_200: '#E1E1E6',
 
     LIGHT_100: '#FFFFFF',
-    LIGHT_600: '#FFFAF1',
     LIGHT_200: '#C4C4CC',
     LIGHT_300: '#7C7C8A',
     LIGHT_400: '#4D585E',
     LIGHT_500: '#76797B',
+    LIGHT_600: '#FFFAF1',
 
     BACKGROUND_900: '#000A0F',
     BACKGROUND_800: '#001119',

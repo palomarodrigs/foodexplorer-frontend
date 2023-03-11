@@ -5,24 +5,29 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
 
-  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
   color: ${({ theme }) => theme.COLORS.LIGHT_300};
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
   margin-bottom: 8px;
   border-radius: 5px;
 
   > input {
+    width: 100%;
     height: 56px;
     padding: 12px;
 
-    margin-left: 16px;
+    border-radius: 5px;
 
-    color: ${({ theme }) => theme.COLORS.LIGHT_100};
-    background: transparent;
     border: 0;
+    background: transparent;
+    color: ${({ theme }) => theme.COLORS.LIGHT_100};
 
     &:placeholder {
       color: ${({ theme }) => theme.COLORS.LIGHT_300};
+    }
+
+    &:focus {
+      border: 1px solid ${({ theme }) => theme.COLORS.LIGHT_100};
     }
   }
 

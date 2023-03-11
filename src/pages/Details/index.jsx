@@ -12,7 +12,7 @@ import { Footer } from '../../components/Footer'
 import Ravanello from '../../assets/ravanello.png'
 
 export function Details() {
-  const isAdmin = false
+  const isAdmin = true
 
   return (
     <Container isAdmin={isAdmin}>

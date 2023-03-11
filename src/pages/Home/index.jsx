@@ -6,7 +6,7 @@ import { Footer } from '../../components/Footer'
 import { Carousel } from '../../components/Carousel'
 
 export function Home() {
-  const isEdit = false
+  const isEdit = true
 
   return (
     <Container>

@@ -1,12 +1,16 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-export const Container = styled.button`
-  font-family: 'Roboto';
-  font-weight: 400;
-  font-size: 16px;
-
-  width: 100%;
+export const Container = styled(Link)`
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 24px;
 
   color: ${({ theme }) => theme.COLORS.LIGHT_100};
-  background-color: transparent;
+
+  > svg {
+    width: 700px;
+
+    margin: 0 8px;
+  }
 `

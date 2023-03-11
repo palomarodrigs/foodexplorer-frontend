@@ -18,6 +18,10 @@ export const Container = styled.button`
     margin: 0 8px;
   } */
 
+  &:focus {
+    border: 1px solid ${({ theme }) => theme.COLORS.LIGHT_100};
+  }
+
   color: ${({ theme }) => theme.COLORS.LIGHT_100};
   background-color: ${({ theme }) => theme.COLORS.RED_200};
 `

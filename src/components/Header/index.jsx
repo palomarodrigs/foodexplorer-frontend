@@ -11,7 +11,7 @@ import { Button } from '../Button'
 import { ButtonText } from '../ButtonText'
 
 export function Header() {
-  const isAdmin = false
+  const isAdmin = true
 
   return (
     <Container>

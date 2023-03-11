@@ -3,8 +3,8 @@ import { Container } from './styles'
 
 export function LogoAdmin({ isAdmin }) {
   return (
-    <Container to='/' isAdmin={isAdmin}>
-      <div className='logo'>
+    <Container to='/'>
+      <div className='logo' isAdmin={isAdmin}>
         <img src={LogoExplorer} alt='logo explorer' />
         <h1>food explorer</h1>
       </div>
