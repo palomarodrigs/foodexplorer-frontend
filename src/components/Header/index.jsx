@@ -33,7 +33,11 @@ export function Header() {
       )}
 
       <div className='content'>
-        {isAdmin ? <Button className='new' title='New dish' /> : <Button title='Requests (0)' />}
+        {isAdmin ? (
+          <Button className='new' title='New dish' />
+        ) : (
+          <Button title='Requests (0)' />
+        )}
 
         <button className='logout'>
           <FiLogOut />
