@@ -12,7 +12,7 @@ export const Container = styled.div`
 
   white-space: nowrap;
 
-  padding: 24px 123px;
+  padding: 24px 100px;
 
   background-color: ${({ theme }) => theme.COLORS.DARK_800};
 
@@ -20,16 +20,19 @@ export const Container = styled.div`
     margin-top: 8px;
 
     input {
-      width: 500px;
+      width: 430px;
     }
   }
 
   .btns {
-    width: 108px;
     display: flex;
-    gap: 32px;
+    gap: 24px;
 
-    margin-right: 24px;
+    /* margin-right: 24px; */
+
+    a {
+      font-size: 16px;
+    }
   }
 
   .content {
@@ -39,7 +42,7 @@ export const Container = styled.div`
   }
 
   button {
-    width: 216px;
+    width: 147px;
   }
 
   .logout {
@@ -119,36 +122,4 @@ export const Container = styled.div`
       }
     }
   }
-
-  /* @media (max-width: 900px) {
-    gap: 15px;
-
-    .logo {
-      h1 {
-        font-size: 14px;
-      }
-
-      img {
-        width: 24px;
-      }
-
-      span {
-        font-size: 12px;
-      }
-    }
-
-    .search {
-      input {
-        width: 100px;
-      }
-    }
-
-    .new {
-      width: 140px;
-    }
-
-    .menu-mobile {
-      display: flex;
-    }
-  } */
 `

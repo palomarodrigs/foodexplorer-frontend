@@ -1,17 +1,25 @@
-import { FiSearch, FiLogOut, FiMenu } from 'react-icons/fi'
 import Receipt from '../../assets/receipt.svg'
+import { FiSearch, FiLogOut, FiMenu } from 'react-icons/fi'
 
-import { Container } from './styles'
 import { Link } from 'react-router-dom'
+import { Container } from './styles'
 
-import { LogoAdmin } from '../LogoAdmin'
 import { Logo } from '../Logo'
 import { Input } from '../Input'
 import { Button } from '../Button'
+import { LogoAdmin } from '../LogoAdmin'
 import { ButtonText } from '../ButtonText'
 
+import { useNavigate } from 'react-router-dom'
+
 export function Header() {
-  const isAdmin = true
+  const isAdmin = false
+
+  const navigate = useNavigate()
+
+  function handleCart() {
+    navigate('/cart')
+  }
 
   return (
     <Container>
@@ -36,7 +44,7 @@ export function Header() {
         {isAdmin ? (
           <Button className='new' title='New dish' />
         ) : (
-          <Button title='Requests (0)' />
+          <Button title='Cart (0)' onClick={() => handleCart()} />
         )}
 
         <button className='logout'>
