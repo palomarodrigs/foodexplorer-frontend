@@ -10,7 +10,7 @@ export const Container = styled.footer`
   justify-content: space-between;
   align-items: center;
 
-  padding: 24px 123px;
+  padding: 24px 140px;
 
   background: ${({ theme }) => theme.COLORS.DARK_800};
 

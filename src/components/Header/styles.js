@@ -12,7 +12,7 @@ export const Container = styled.div`
 
   white-space: nowrap;
 
-  padding: 24px 100px;
+  padding: 24px 140px;
 
   background-color: ${({ theme }) => theme.COLORS.DARK_800};
 
@@ -20,7 +20,7 @@ export const Container = styled.div`
     margin-top: 8px;
 
     input {
-      width: 430px;
+      width: 500px;
     }
   }
 

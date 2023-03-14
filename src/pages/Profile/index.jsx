@@ -11,43 +11,43 @@ export function Profile() {
   return (
     <Container>
       <header>
-        <Link to='/'>
-          <button type='button'>
+        <Link to="/">
+          <button type="button">
             <FiChevronLeft size={32} />
           </button>
         </Link>
 
-        <button className='logout' type='button'>
+        <button className="logout" type="button">
           <FiLogOut size={25} />
         </button>
       </header>
 
       <Form>
         <Avatar>
-          <img src='http://github.com/palomarodrigs.png' alt='' />
+          <img src="http://github.com/palomarodrigs.png" alt="" />
 
-          <label htmlFor='avatar'>
+          <label htmlFor="avatar">
             <FiCamera />
 
-            <input id='avatar' type='file' />
+            <input id="avatar" type="file" />
           </label>
         </Avatar>
 
         <Input
-          placeholder='Name'
-          type='text'
+          placeholder="Name"
+          type="text"
           icon={FiUser}
           // value={name}
           // onChange={e => setName(e.target.value)}
         />
 
-        <Input placeholder='Mail' type='text' icon={FiMail} />
+        <Input placeholder="Mail" type="text" icon={FiMail} />
 
-        <Input placeholder='Current password' type='password' icon={FiLock} />
+        <Input placeholder="Current password" type="password" icon={FiLock} />
 
-        <Input placeholder='New password' type='password' icon={FiLock} />
+        <Input placeholder="New password" type="password" icon={FiLock} />
 
-        <Button title='Save' />
+        <Button title="Save" />
       </Form>
 
       <Footer />

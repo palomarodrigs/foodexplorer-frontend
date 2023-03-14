@@ -12,8 +12,8 @@ export default createGlobalStyle`
         color: ${({ theme }) => theme.COLORS.LIGHT_100};
         /* overflow: hidden; */
 
-        width: 100%;
-        height: 100%;
+        /* width: 100%;
+        height: 100%; */
         -webkit-font-smoothing: antialiased;
     }
 
