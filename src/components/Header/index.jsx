@@ -39,7 +39,7 @@ export function Header() {
         ''
       ) : (
         <div className='btns'>
-          <ButtonText title='My favorites' />
+          <ButtonText to='/favorites' title='My favorites' />
           <ButtonText to='/historic' title='Order history' />
         </div>
       )}
