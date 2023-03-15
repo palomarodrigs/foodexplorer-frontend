@@ -17,6 +17,10 @@ export default createGlobalStyle`
         -webkit-font-smoothing: antialiased;
     }
 
+    h1 {
+        color: ${({ theme }) => theme.COLORS.TITLE_200};
+    }
+
      p {
         color: ${({ theme }) => theme.COLORS.TITLE_200};
     }

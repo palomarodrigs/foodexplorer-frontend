@@ -21,6 +21,10 @@ export function Header() {
     navigate('/cart')
   }
 
+  function handleNewDish() {
+    navigate('/new')
+  }
+
   return (
     <Container>
       <Button className='menu-mobile' icon={FiMenu} />
@@ -36,13 +40,13 @@ export function Header() {
       ) : (
         <div className='btns'>
           <ButtonText title='My favorites' />
-          <ButtonText title='Order history' />
+          <ButtonText to='/historic' title='Order history' />
         </div>
       )}
 
       <div className='content'>
         {isAdmin ? (
-          <Button className='new' title='New dish' />
+          <Button className='new' title='New dish' onClick={() => handleNewDish()} />
         ) : (
           <Button title='Cart (0)' onClick={() => handleCart()} />
         )}

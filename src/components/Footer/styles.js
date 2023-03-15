@@ -23,6 +23,8 @@ export const Container = styled.footer`
     h1 {
       font-size: 24px;
       margin-left: 10px;
+
+      color: ${({ theme }) => theme.COLORS.LIGHT_400};
     }
 
     img {

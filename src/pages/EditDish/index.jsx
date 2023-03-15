@@ -17,7 +17,7 @@ export function EditDish() {
 
       <main>
         <div className='top'>
-          <ButtonText to='/' className='btn-return' title='Return'>
+          <ButtonText to='/details' className='btn-return' title='Return'>
             <FiChevronLeft />
           </ButtonText>
           <h1>Edit dish</h1>

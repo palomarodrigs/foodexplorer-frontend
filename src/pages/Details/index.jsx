@@ -9,10 +9,18 @@ import { Stepper } from '../../components/Stepper'
 import { Button } from '../../components/Button'
 import { Footer } from '../../components/Footer'
 
+import { useNavigate } from 'react-router-dom'
+
 import Ravanello from '../../assets/ravanello.png'
 
 export function Details() {
   const isAdmin = true
+
+  const navigate = useNavigate()
+
+  function handleEditDish() {
+    navigate('/edit')
+  }
 
   return (
     <Container isAdmin={isAdmin}>
@@ -31,8 +39,8 @@ export function Details() {
         <div className='details'>
           <h1>Salad Ravanello</h1>
           <p>
-            Radishes, green leaves, and sweet and sour sauce sprinkled with sesame seeds. The naan bread
-            adds a special touch.
+            Radishes, green leaves, and sweet and sour sauce sprinkled with sesame seeds. The naan
+            bread adds a special touch.
           </p>
 
           <div className='tags'>
@@ -43,7 +51,7 @@ export function Details() {
           </div>
 
           {isAdmin ? (
-            <Button className='edit' title='Edit dish' />
+            <Button className='edit' title='Edit dish' onClick={() => handleEditDish()} />
           ) : (
             <div className='btns'>
               <Stepper />

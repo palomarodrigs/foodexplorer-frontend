@@ -28,10 +28,11 @@ export const Container = styled.div`
     display: flex;
     gap: 24px;
 
-    /* margin-right: 24px; */
-
     a {
+      font-family: 'Roboto';
+      font-weight: 400;
       font-size: 16px;
+      color: ${({ theme }) => theme.COLORS.TITLE_200};
     }
   }
 

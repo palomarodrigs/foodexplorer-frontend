@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 
 import { Home } from '../pages/Home'
 import { Cart } from '../pages/Cart'
+import { OrderHistory } from '../pages/OrderHistory'
 import { Profile } from '../pages/Profile'
 import { Details } from '../pages/Details'
 import { NewDish } from '../pages/NewDish'
@@ -16,6 +17,7 @@ export function AppRoutes() {
       <Route path='/edit' element={<EditDish />} />
       <Route path='/new' element={<NewDish />} />
       <Route path='/cart' element={<Cart />} />
+      <Route path='/historic' element={<OrderHistory />} />
     </Routes>
   )
 }
