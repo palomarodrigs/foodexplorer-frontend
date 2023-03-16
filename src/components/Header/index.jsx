@@ -7,12 +7,17 @@ import { Container } from './styles'
 import { Logo } from '../Logo'
 import { Input } from '../Input'
 import { Button } from '../Button'
+import { MenuMobile } from '../MenuMobile'
 import { LogoAdmin } from '../LogoAdmin'
 import { ButtonText } from '../ButtonText'
 
 import { useNavigate } from 'react-router-dom'
 
+import { useState } from 'react'
+
 export function Header() {
+  const [menuIsVisible, setMenuIsVisible] = useState(false)
+
   const isAdmin = false
 
   const navigate = useNavigate()
@@ -27,7 +32,12 @@ export function Header() {
 
   return (
     <Container>
-      <Button className='menu-mobile' icon={FiMenu} />
+      <FiMenu size={32} className='menu-mobile' onClick={() => setMenuIsVisible(true)} />
+      <MenuMobile
+        menuIsVisible={menuIsVisible}
+        setMenuIsVisible={setMenuIsVisible}
+        onClick={() => setMenuIsVisible(false)}
+      />
 
       <div className='logo'>{isAdmin ? <LogoAdmin /> : <Logo />}</div>
 
