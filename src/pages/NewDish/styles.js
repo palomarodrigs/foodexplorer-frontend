@@ -163,6 +163,10 @@ export const Form = styled.form`
           font-size: 18px;
           padding: 87px;
         }
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
       }
     }
 

@@ -14,7 +14,6 @@ export const Container = styled.div`
       width: 100%;
       border-radius: 8px 8px 0px 0px;
       border: 2px solid ${({ theme }) => theme.COLORS.DARK_900};
-      /* border-width: 2px 2px 0 2px; */
 
       table * {
         font-family: 'Roboto';
@@ -45,6 +44,28 @@ export const Container = styled.div`
 
         p {
           color: ${({ theme }) => theme.COLORS.LIGHT_200};
+        }
+
+        select {
+          font-family: 'Roboto';
+          font-size: 14px;
+
+          width: 175px;
+          height: 48px;
+
+          display: flex;
+          align-items: center;
+          padding: 8px;
+
+          border: 0;
+          border-radius: 5px;
+
+          color: ${({ theme }) => theme.COLORS.LIGHT_200};
+          background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
         }
       }
 

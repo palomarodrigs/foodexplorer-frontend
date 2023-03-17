@@ -1,6 +1,8 @@
 import { Container } from './styles'
 
 export function OrderTable() {
+  const isAdmin = false
+
   return (
     <Container>
       <main>
@@ -16,9 +18,20 @@ export function OrderTable() {
           </thead>
           <tbody>
             <tr>
-              <td>
-                <span>🔴 Pending</span>
-              </td>
+              {isAdmin ? (
+                <td>
+                  <select name='type'>
+                    <option value='pending'>🔴 Pending</option>
+                    <option value='preparing'>🟡 Preparing</option>
+                    <option value='delivered'>🟢 Delivered</option>
+                  </select>
+                </td>
+              ) : (
+                <td>
+                  <span>🔴 Pending</span>
+                </td>
+              )}
+
               <td>
                 <p>00000004</p>
               </td>
@@ -31,22 +44,30 @@ export function OrderTable() {
             </tr>
 
             <tr>
+              {isAdmin ? (
+                <td>
+                  <select name='type'>
+                    <option value='pending'>🔴 Pending</option>
+                    <option value='preparing'>🟡 Preparing</option>
+                    <option value='delivered'>🟢 Delivered</option>
+                  </select>
+                </td>
+              ) : (
+                <td>
+                  <span>🔴 Pending</span>
+                </td>
+              )}
+
               <td>
-                <span>🟡 Preparing</span>
+                <p>00000004</p>
               </td>
               <td>
-                <p>00000003</p>
-              </td>
-              <td>
-                <p>1 x Radish Salad, 1 x Parma Toast, 1 x Cinnamon Tea, 1 x Passion Fruit Juice</p>
+                <p>1 x Radish Salad, 1 x Parma Toast</p>
               </td>
               <td>
                 <p>05/20 at 18h00</p>
               </td>
             </tr>
-            {/* <tr>Preparing</tr>
-            <tr>Delivered</tr>
-            <tr>Delivered</tr> */}
           </tbody>
         </table>
       </main>

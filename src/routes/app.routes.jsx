@@ -18,7 +18,7 @@ export function AppRoutes() {
       <Route path='/edit' element={<EditDish />} />
       <Route path='/new' element={<NewDish />} />
       <Route path='/cart' element={<Cart />} />
-      <Route path='/historic' element={<OrderHistory />} />
+      <Route path='/history' element={<OrderHistory />} />
       <Route path='/favorites' element={<Favorites />} />
     </Routes>
   )
