@@ -12,8 +12,8 @@ export const Container = styled.div`
 
   .header {
     display: flex;
-    flex-wrap: nowrap;
     align-items: center;
+    white-space: nowrap;
 
     margin-left: 150px;
 
