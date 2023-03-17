@@ -2,7 +2,6 @@ import { FiX, FiSearch } from 'react-icons/fi'
 import { Container } from './styles'
 
 import { Input } from '../Input'
-import { Footer } from '../Footer'
 
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
@@ -12,7 +11,7 @@ export function MenuMobile({ menuIsVisible, setMenuIsVisible }) {
     document.body.style.overflowY = menuIsVisible ? 'hidden' : 'auto'
   }, [menuIsVisible])
 
-  const isAdmin = true
+  const isAdmin = false
 
   return (
     <Container isVisible={menuIsVisible}>
@@ -29,8 +28,6 @@ export function MenuMobile({ menuIsVisible, setMenuIsVisible }) {
           <button className='logout'>Logout</button>
         </div>
       </main>
-
-      <Footer />
     </Container>
   )
 }

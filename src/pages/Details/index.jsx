@@ -14,7 +14,7 @@ import { useNavigate } from 'react-router-dom'
 import Ravanello from '../../assets/ravanello.png'
 
 export function Details() {
-  const isAdmin = true
+  const isAdmin = false
 
   const navigate = useNavigate()
 

@@ -18,7 +18,7 @@ export function NewDish() {
       <main>
         <div className='top'>
           <ButtonText to='/' className='btn-return' title='Return'>
-            <FiChevronLeft />
+            <FiChevronLeft size={32} />
           </ButtonText>
           <h1>New dish</h1>
         </div>

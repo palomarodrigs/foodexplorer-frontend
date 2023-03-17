@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  width: 100%;
-  height: 100vh;
+  position: relative;
+  min-height: 100vh;
+
   overflow: hidden;
 
   > main {
-    margin-bottom: 376px;
+    /* margin-bottom: 0px; */
+    margin-bottom: 370px;
 
     .table-mobile {
       display: none;
@@ -14,7 +16,7 @@ export const Container = styled.div`
 
     @media (max-width: 480px) {
       padding: 32px;
-      margin-bottom: 280px;
+      margin-bottom: 282px;
 
       > .table-desktop {
         display: none;

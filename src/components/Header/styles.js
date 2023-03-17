@@ -90,6 +90,10 @@ export const Container = styled.div`
       padding: 0;
 
       background-color: transparent;
+
+      svg {
+        width: 24px;
+      }
     }
 
     .logo {
@@ -117,6 +121,7 @@ export const Container = styled.div`
     .receipt-mobile {
       display: flex;
       justify-content: center;
+      width: 32px;
 
       > img {
         width: 30px;

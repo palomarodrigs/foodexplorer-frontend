@@ -10,7 +10,7 @@ export default createGlobalStyle`
     body {
         background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
         color: ${({ theme }) => theme.COLORS.LIGHT_100};
-        /* overflow: hidden; */
+        overflow: hidden;
 
         /* width: 100%;
         height: 100%; */

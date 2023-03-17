@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  height: 100vh;
+  position: relative;
+  min-height: 100vh;
 
   display: flex;
   flex-direction: column;
@@ -12,9 +13,9 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
 
-    margin: 0 auto 185px;
+    margin: 0 auto 186px;
 
-    padding: 0 123px;
+    padding: 0 140px;
 
     .top {
       a {
@@ -71,7 +72,7 @@ export const Container = styled.div`
   }
 
   @media (max-width: 480px) {
-    overflow: auto;
+    /* overflow: auto; */
 
     main {
       flex-direction: column;

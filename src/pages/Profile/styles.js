@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  height: 100vh;
+  position: relative;
+  min-height: 100vh;
 
   display: grid;
   grid-template-rows: 114px auto;
@@ -43,7 +44,7 @@ export const Container = styled.div`
 export const Form = styled.div`
   grid-area: form;
   width: 360px;
-  margin: 0 auto 210px;
+  margin: 0 auto 206px;
 
   > div:nth-child(4) {
     margin-top: 24px;

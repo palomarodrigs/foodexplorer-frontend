@@ -1,15 +1,23 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  max-width: 100vw;
-  height: 100vh;
+  /* width: 100%; */
+
+  position: relative;
+  min-height: 100vh;
 
   display: flex;
   flex-direction: column;
 
+  overflow: hidden;
+
   > main {
-    padding-right: 1px;
+    /* padding-right: 1px; */
     overflow-y: auto;
+
+    .content {
+      margin-bottom: 70px;
+    }
 
     .carousels {
       display: flex;

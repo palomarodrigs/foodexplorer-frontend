@@ -3,13 +3,18 @@ import styled from 'styled-components'
 export const Container = styled.div`
   width: 100%;
 
+  overflow: hidden;
+
+  position: relative;
+  min-height: 100vh;
+
   > main {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     padding: 0 140px;
-    margin-bottom: 67px;
+    margin-bottom: 65px;
 
     > .orders {
       display: flex;

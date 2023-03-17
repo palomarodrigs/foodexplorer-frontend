@@ -73,9 +73,9 @@ export function Header() {
       {isAdmin ? (
         ''
       ) : (
-        <button className='receipt-mobile'>
+        <Link to='/cart' className='receipt-mobile'>
           <img src={Receipt} alt='' />
-        </button>
+        </Link>
       )}
     </Container>
   )
