@@ -15,28 +15,28 @@ export const Container = styled.div`
     align-items: center;
 
     height: 144px;
-    padding: 0 123px;
+    padding: 0 27px 12px 27px;
 
     background-color: ${({ theme }) => theme.COLORS.DARK_800};
+
+    svg {
+      width: 32px;
+    }
+
+    .logout {
+      svg {
+        width: 32px;
+      }
+    }
 
     button {
       color: ${({ theme }) => theme.COLORS.LIGHT_100};
     }
   }
 
-  @media (max-width: 480px) {
+  @media (min-width: 900px) {
     > header {
-      padding: 0 27px 12px 27px;
-
-      svg {
-        width: 25px;
-      }
-
-      .logout {
-        svg {
-          width: 22px;
-        }
-      }
+      padding: 0 123px;
     }
   }
 `
@@ -44,14 +44,18 @@ export const Container = styled.div`
 export const Form = styled.div`
   grid-area: form;
   width: 360px;
-  margin: 0 auto 206px;
+  margin: 0 auto 240px;
 
   > div:nth-child(4) {
     margin-top: 24px;
   }
 
-  @media (max-width: 480px) {
-    margin: 0 auto 240px;
+  @media (min-width: 900px) {
+    margin: 0 auto 206px;
+  }
+
+  @media (min-width: 600px) and (max-width: 900px) {
+    margin: 0 auto 370px;
   }
 `
 

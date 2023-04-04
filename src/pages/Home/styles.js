@@ -1,39 +1,69 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  /* width: 100%; */
-
   position: relative;
   min-height: 100vh;
 
   display: flex;
   flex-direction: column;
 
-  overflow: hidden;
-
-  > main {
-    /* padding-right: 1px; */
-    overflow-y: auto;
+  main {
+    padding: 0;
 
     .content {
-      margin-bottom: 70px;
+      padding: 15px;
+      margin-bottom: 100px;
+
+      .banner {
+        margin: 44px 0 0;
+      }
     }
 
     .carousels {
-      display: flex;
-      justify-content: center;
+      justify-content: flex-start;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      display: none;
     }
   }
 
-  @media (max-width: 480px) {
+  @media (min-width: 900px) {
+    overflow: hidden;
+
+    > main {
+      /* padding-right: 1px; */
+      overflow-y: auto;
+
+      .content {
+        margin-bottom: 70px;
+      }
+
+      .carousels {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  @media (min-width: 600px) and (max-width: 900px) {
     main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       padding: 0;
 
       .content {
-        padding: 15px;
+        padding: 55px 0 25px;
 
         .banner {
           margin: 44px 0 0;
+          width: 500px;
         }
       }
 

@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  > .favorites-list {
+  .favorites-list {
     display: flex;
     align-items: center;
-    margin-bottom: 48px;
+    margin-bottom: 32px;
 
     img {
       width: 72px;
@@ -40,9 +40,9 @@ export const Container = styled.div`
     }
   }
 
-  @media (max-width: 480px) {
-    .favorites-list {
-      margin-bottom: 32px;
+  @media (min-width: 900px) {
+    > .favorites-list {
+      margin-bottom: 48px;
     }
   }
 `

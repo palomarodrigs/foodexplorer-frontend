@@ -92,4 +92,25 @@ export const Container = styled.div`
       }
     }
   }
+
+  @media (min-width: 600px) and (max-width: 900px) {
+    header {
+      width: 100%;
+      align-items: center;
+    }
+
+    main {
+      .btns button {
+        width: 100%;
+      }
+
+      div {
+        width: 100%;
+
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
 `

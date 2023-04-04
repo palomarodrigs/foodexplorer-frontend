@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { FiChevronLeft, FiUpload } from 'react-icons/fi'
 import { Container, Form } from './styles'
 
@@ -7,7 +8,6 @@ import { Button } from '../../components/Button'
 import { Footer } from '../../components/Footer'
 import { Section } from '../../components/Section'
 import { Textarea } from '../../components/Textarea'
-import { ButtonText } from '../../components/ButtonText'
 import { IngredientItem } from '../../components/IngredientItem'
 
 export function NewDish() {
@@ -17,9 +17,10 @@ export function NewDish() {
 
       <main>
         <div className='top'>
-          <ButtonText to='/' className='btn-return' title='Return'>
+          <Link to='/'>
             <FiChevronLeft size={32} />
-          </ButtonText>
+            return
+          </Link>
           <h1>New dish</h1>
         </div>
         <Form>
@@ -66,9 +67,8 @@ export function NewDish() {
             <Textarea placeholder='Briefly talk about the dish, its ingredients, and composition' />
           </div>
 
-          <div className='btns'>
-            <Button className='delete' title='Delete dish' />
-            <Button className='save' title='Save changes' />
+          <div className='save-changes'>
+            <Button title='Save changes' />
           </div>
         </Form>
       </main>

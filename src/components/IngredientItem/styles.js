@@ -4,17 +4,14 @@ export const Container = styled.div`
   width: 118px;
   height: 32px;
   display: flex;
-  /* align-items: center; */
 
   padding: 4px 8px;
 
   border-radius: 10px;
   background-color: red;
 
-  border: ${({ theme, isNew }) =>
-    isNew ? `1px dashed ${theme.COLORS.LIGHT_300}` : 'none'};
-  background-color: ${({ theme, isNew }) =>
-    isNew ? 'transparent' : theme.COLORS.LIGHT_500};
+  border: ${({ theme, isNew }) => (isNew ? `1px dashed ${theme.COLORS.LIGHT_300}` : 'none')};
+  background-color: ${({ theme, isNew }) => (isNew ? 'transparent' : theme.COLORS.LIGHT_500)};
 
   > button {
     display: flex;

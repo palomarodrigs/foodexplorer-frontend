@@ -28,7 +28,7 @@ export const Container = styled(Link)`
     color: ${({ theme }) => theme.COLORS.CAKE_100};
   }
 
-  @media (max-width: 480px) {
+  @media (min-width: 600px) and (max-width: 900px) {
     flex-direction: row;
     align-items: center;
     gap: 8px;

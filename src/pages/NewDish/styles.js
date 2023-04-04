@@ -5,21 +5,31 @@ export const Container = styled.div`
   height: 100vh;
 
   > main {
-    width: 1120px;
+    width: 428px;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
 
     margin: 0 auto;
-    padding: 24px 0 40px;
+    padding: 0 32px 90px;
 
     .top {
       display: flex;
       flex-direction: column;
       gap: 24px;
 
-      .btn-return {
+      margin: 0;
+
+      a {
+        display: flex;
+        align-items: center;
+
+        font-weight: 500;
+        font-size: 24px;
+
         margin-top: 40px;
+        margin-left: -12px;
+        color: ${({ theme }) => theme.COLORS.LIGHT_100};
       }
 
       h1 {
@@ -29,49 +39,48 @@ export const Container = styled.div`
       }
     }
 
-    .btns {
-      display: flex;
-      justify-content: flex-end;
-      gap: 32px;
-
+    .save-changes {
       margin-top: 32px;
-      white-space: nowrap;
-
-      .delete {
-        width: 135px;
-        padding: 12px 24px;
-        background-color: ${({ theme }) => theme.COLORS.DARK_700};
-      }
-
-      .save {
-        width: 172px;
+      button {
+        width: 364px;
+        height: 48px;
         padding: 12px 24px;
         background-color: ${({ theme }) => theme.COLORS.RED_100};
+        transition: 0.5s;
       }
+    }
+
+    .save-changes button:hover {
+      background-color: ${({ theme }) => theme.COLORS.RED_200};
+    }
+
+    @media (min-width: 900px) {
+      width: 1120px;
+      padding: 0;
+      margin: 0 150px;
     }
   }
 
-  @media (max-width: 480px) {
-    .top {
-      margin: 0;
-      padding: 0 32px;
-
-      .btn-return {
-        font-size: 16px;
-      }
-
-      h1 {
-        font-size: 32px;
-      }
-    }
+  @media (min-width: 600px) and (max-width: 900px) {
     > main {
       width: 428px;
-
+      align-items: center;
       padding: 0 0 40px;
 
-      .btns {
-        .delete {
-          width: 160px;
+      .top {
+        padding: 0;
+
+        position: absolute;
+        left: 160px;
+
+        h1 {
+          font-size: 32px;
+        }
+      }
+
+      .save-changes {
+        button {
+          width: 500px;
         }
       }
     }
@@ -81,6 +90,7 @@ export const Container = styled.div`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+  align-items: center;
   overflow-y: auto;
 
   > .input-wrapper {
@@ -100,7 +110,7 @@ export const Form = styled.form`
     }
 
     label {
-      width: 229px;
+      width: 364px;
       height: 48px;
 
       display: flex;
@@ -109,8 +119,8 @@ export const Form = styled.form`
       align-items: center;
       gap: 8px;
 
-      margin-top: 16px;
-      padding: 12px 32px;
+      margin-top: 10px;
+      /* padding: 12px 32px; */
 
       font-size: 14px;
       cursor: pointer;
@@ -131,6 +141,7 @@ export const Form = styled.form`
     }
 
     .name {
+      width: 364px;
       div {
         margin-top: 16px;
 
@@ -147,7 +158,7 @@ export const Form = styled.form`
       flex-direction: column;
 
       select {
-        width: 386px;
+        width: 364px;
         height: 48px;
 
         font-size: 14px;
@@ -171,7 +182,7 @@ export const Form = styled.form`
     }
 
     .tags {
-      width: 837px;
+      width: 364px;
       height: auto;
 
       display: flex;
@@ -180,14 +191,14 @@ export const Form = styled.form`
       gap: 16px;
 
       padding: 8px;
-      margin-top: 16px;
+      margin-top: 10px;
 
       border-radius: 8px;
       background-color: ${({ theme }) => theme.COLORS.DARK_700};
     }
 
     .price {
-      width: 251px;
+      width: 364px;
 
       div {
         height: 48px;
@@ -196,34 +207,109 @@ export const Form = styled.form`
         background-color: ${({ theme }) => theme.COLORS.DARK_700};
       }
     }
+
+    .description {
+      div {
+        width: 364px;
+
+        textarea {
+          width: 364px;
+        }
+      }
+    }
   }
 
-  @media (max-width: 480px) {
-    align-items: center;
+  @media (min-width: 900px) {
+    align-items: flex-start;
+    margin-bottom: 140px;
 
     > .input-wrapper {
-      padding: 32px;
-
+      padding: 0;
       label {
-        width: 364px;
-      }
-
-      .name {
-        width: 364px;
+        width: 229px;
       }
 
       .options {
         select {
-          width: 364px;
+          width: 386px;
+        }
+      }
+
+      .price {
+        width: 251px;
+      }
+
+      .tags {
+        width: 760px;
+      }
+    }
+
+    .save-changes {
+      position: absolute;
+      bottom: -180px;
+      right: 220px;
+    }
+  }
+
+  @media (min-width: 600px) and (max-width: 900px) {
+    align-items: center;
+
+    > .input-wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+
+      margin-top: 180px;
+      padding: 0;
+
+      label {
+        width: 500px;
+      }
+
+      div {
+        width: 500px;
+        input {
+          width: 500px;
+        }
+      }
+
+      .name {
+        div {
+          input {
+            width: 500px;
+          }
+        }
+      }
+
+      .options {
+        select {
+          width: 500px;
+        }
+      }
+
+      .tags {
+        width: 500px;
+
+        div {
+          width: 118px;
+          input {
+            width: 80px;
+          }
         }
       }
 
       .price {
         width: 364px;
       }
+    }
 
-      .tags {
-        width: 364px;
+    .description {
+      div {
+        width: 500px;
+        height: 172px;
+
+        textarea {
+          width: 500px;
+        }
       }
     }
   }

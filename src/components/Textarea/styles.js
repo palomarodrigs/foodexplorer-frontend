@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  width: 1120px;
+  width: 364px;
 
   display: flex;
   flex-direction: column;
@@ -11,13 +11,13 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.COLORS.DARK_700};
   border-radius: 8px;
 
-  @media (max-width: 480px) {
-    width: 364px;
+  @media (min-width: 900px) {
+    width: 1043px;
   }
 `
 
 export const TextareaInput = styled.textarea`
-  width: 1120px;
+  width: 364px;
   height: 172px;
 
   font-family: 'Roboto';
@@ -41,7 +41,7 @@ export const TextareaInput = styled.textarea`
     border: 1px solid ${({ theme }) => theme.COLORS.LIGHT_100};
   }
 
-  @media (max-width: 480px) {
-    width: 364px;
+  @media (min-width: 900px) {
+    width: 1043px;
   }
 `

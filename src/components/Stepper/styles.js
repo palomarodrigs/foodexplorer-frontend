@@ -2,8 +2,11 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   gap: 17px;
+
+  margin-bottom: 22px;
 
   button {
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
@@ -11,12 +14,15 @@ export const Container = styled.div`
 
   span {
     font-family: 'Roboto';
-    font-weight: 700;
     font-size: 20px;
   }
 
-  @media (max-width: 480px) {
-    justify-content: center;
-    /* margin-bottom: 54px; */
+  @media (min-width: 900px) {
+    align-items: baseline;
+    margin: 0;
+
+    span {
+      font-weight: 700;
+    }
   }
 `

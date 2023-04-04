@@ -14,9 +14,9 @@ export const Container = styled.button`
     opacity: 0.5;
   }
 
-  /* > svg {
+  > svg {
     margin: 0 8px;
-  } */
+  }
 
   &:focus {
     border: 1px solid ${({ theme }) => theme.COLORS.LIGHT_100};

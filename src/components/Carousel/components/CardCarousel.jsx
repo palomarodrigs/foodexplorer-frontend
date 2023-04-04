@@ -12,10 +12,11 @@ const settings = {
   navigation: true,
   loop: true,
   breakpoints: {
-    480: {
+    600: {
       slidesPerView: 2
     },
-    1280: {
+
+    900: {
       slidesPerView: 3
     }
   }

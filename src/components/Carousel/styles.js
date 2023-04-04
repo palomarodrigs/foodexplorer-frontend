@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
   /* padding: 0 265px; */
 
-  @media (max-width: 480px) {
+  @media (min-width: 900px) {
     span {
       /* display: none; */
     }

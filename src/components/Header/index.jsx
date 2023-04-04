@@ -1,15 +1,14 @@
-import Receipt from '../../assets/receipt.svg'
 import { FiSearch, FiLogOut, FiMenu } from 'react-icons/fi'
 
 import { Link } from 'react-router-dom'
 import { Container } from './styles'
 
+import { LogoAdmin } from '../LogoAdmin'
+import { MenuMobile } from '../MenuMobile'
+import { DishCount } from '../DishCount'
 import { Logo } from '../Logo'
 import { Input } from '../Input'
 import { Button } from '../Button'
-import { MenuMobile } from '../MenuMobile'
-import { LogoAdmin } from '../LogoAdmin'
-import { ButtonText } from '../ButtonText'
 
 import { useNavigate } from 'react-router-dom'
 
@@ -45,14 +44,13 @@ export function Header() {
         <Input icon={FiSearch} placeholder='Search for dishes or ingredients' />
       </div>
 
-      {isAdmin ? (
-        ''
-      ) : (
-        <div className='btns'>
-          <ButtonText to='/favorites' title='My favorites' />
-          <ButtonText to='/history' title='Order history' />
-        </div>
-      )}
+      <Link id='favorites' to='/favorites'>
+        My favorites
+      </Link>
+
+      <Link id='history' to='/history'>
+        Order history
+      </Link>
 
       <div className='content'>
         {isAdmin ? (
@@ -66,17 +64,13 @@ export function Header() {
         </button>
 
         <Link to='/profile'>
-          <img className='profile' src='https://github.com/palomarodrigs.png' alt='' />
+          <img className='profile' src='https://github.com/palomarodrigs.png' alt='Profile image' />
         </Link>
       </div>
 
-      {isAdmin ? (
-        ''
-      ) : (
-        <Link to='/cart' className='receipt-mobile'>
-          <img src={Receipt} alt='' />
-        </Link>
-      )}
+      <div className='cart-mobile' onClick={() => handleCart()}>
+        {isAdmin ? '' : <DishCount />}
+      </div>
     </Container>
   )
 }

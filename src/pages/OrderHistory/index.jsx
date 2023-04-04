@@ -24,7 +24,7 @@ export function OrderHistory() {
               <tr>
                 <th>000004</th>
                 {isAdmin ? '' : <th>🔴 Pending</th>}
-                <th>20/05 às 18h00</th>
+                <th>05/20 at 18h00</th>
               </tr>
             </thead>
 
@@ -32,8 +32,7 @@ export function OrderHistory() {
               <tr className='tbody-wrapper'>
                 <td>
                   <p>
-                    1 x Salada Radish, 1 x Torradas de Parma, 1 x Chá de Canela, 1 x Suco de
-                    Maracujá
+                    1 x Radish Salad, 1 x Parma Toast, 1 x Cinnamon Tea, 1 x Passion Fruit Juice
                   </p>
                 </td>
 
@@ -57,7 +56,7 @@ export function OrderHistory() {
               <tr>
                 <th>000004</th>
                 {isAdmin ? '' : <th>🔴 Pending</th>}
-                <th>20/05 às 18h00</th>
+                <th>05/20 at 18h00</th>
               </tr>
             </thead>
 
@@ -65,8 +64,7 @@ export function OrderHistory() {
               <tr className='tbody-wrapper'>
                 <td>
                   <p>
-                    1 x Salada Radish, 1 x Torradas de Parma, 1 x Chá de Canela, 1 x Suco de
-                    Maracujá
+                    1 x Radish Salad, 1 x Parma Toast, 1 x Cinnamon Tea, 1 x Passion Fruit Juice
                   </p>
                 </td>
 
