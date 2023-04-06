@@ -8,13 +8,15 @@ export default createGlobalStyle`
     }
 
     body {
-        background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
-        color: ${({ theme }) => theme.COLORS.LIGHT_100};
+        /* width: 100%; */
+        min-height: 100vh;
+        /* position: relative; */
         overflow: hidden;
-
-        /* width: 100%;
-        height: 100%; */
+        
         -webkit-font-smoothing: antialiased;
+
+        color: ${({ theme }) => theme.COLORS.LIGHT_100};
+        background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
     }
 
     h1 {

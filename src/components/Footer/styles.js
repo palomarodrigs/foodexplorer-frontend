@@ -3,9 +3,9 @@ import styled from 'styled-components'
 export const Container = styled.footer`
   width: 100%;
   height: 77px;
-  /* 
+
+  position: absolute;
   bottom: 0;
-  position: absolute; */
 
   display: flex;
   justify-content: space-between;

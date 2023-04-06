@@ -3,15 +3,14 @@ import styled from 'styled-components'
 export const Container = styled.div`
   position: relative;
   min-height: 100vh;
-
   overflow: hidden;
 
   > main {
     display: flex;
     flex-direction: column;
 
-    padding: 32px;
-    margin-bottom: 50px;
+    padding: 32px 32px 0;
+    margin-bottom: 100px;
 
     h1 {
       font-weight: 500;
@@ -27,8 +26,6 @@ export const Container = styled.div`
 
     @media (min-width: 900px) {
       padding: 0 150px;
-      margin-bottom: 178px;
-
       h1 {
         margin: 34px 0 48px;
       }

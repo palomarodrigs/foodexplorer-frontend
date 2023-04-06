@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  width: 100%;
-  height: 100vh;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
 
   > main {
     width: 428px;
@@ -10,7 +11,7 @@ export const Container = styled.div`
     align-items: flex-start;
     flex-direction: column;
 
-    margin: 0 auto;
+    margin: 0 auto 100px;
     padding: 0 32px 90px;
 
     .top {
@@ -39,35 +40,10 @@ export const Container = styled.div`
       }
     }
 
-    .btns {
-      display: flex;
-      white-space: nowrap;
-      gap: 32px;
-
-      margin-top: 32px;
-
-      .delete {
-        width: 160px;
-        padding: 12px 24px;
-        background-color: ${({ theme }) => theme.COLORS.DARK_700};
-      }
-
-      .save {
-        width: 172px;
-        padding: 12px 24px;
-        background-color: ${({ theme }) => theme.COLORS.RED_100};
-        transition: 0.5s;
-      }
-
-      .save:hover {
-        background-color: ${({ theme }) => theme.COLORS.RED_200};
-      }
-    }
-
     @media (min-width: 900px) {
       width: 1120px;
       padding: 0;
-      margin: 0 150px;
+      margin: 0 150px 100px;
     }
   }
 
@@ -219,15 +195,39 @@ export const Form = styled.form`
         background-color: ${({ theme }) => theme.COLORS.DARK_700};
       }
     }
+  }
 
-    .description {
-      div {
+  .description {
+    margin-bottom: 32px;
+    div {
+      width: 364px;
+
+      textarea {
         width: 364px;
-
-        textarea {
-          width: 364px;
-        }
       }
+    }
+  }
+
+  .btns {
+    display: flex;
+    white-space: nowrap;
+    gap: 32px;
+
+    .delete {
+      width: 160px;
+      padding: 12px 24px;
+      background-color: ${({ theme }) => theme.COLORS.DARK_700};
+    }
+
+    .save {
+      width: 172px;
+      padding: 12px 24px;
+      background-color: ${({ theme }) => theme.COLORS.RED_100};
+      transition: 0.5s;
+    }
+
+    .save:hover {
+      background-color: ${({ theme }) => theme.COLORS.RED_200};
     }
   }
 
@@ -256,9 +256,19 @@ export const Form = styled.form`
       }
     }
 
+    .description {
+      div {
+        width: 1043px;
+
+        textarea {
+          width: 1043px;
+        }
+      }
+    }
+
     .btns {
       position: absolute;
-      bottom: -180px;
+      bottom: 184px;
       right: 220px;
 
       .delete {

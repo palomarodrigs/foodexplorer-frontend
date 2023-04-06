@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  width: 100%;
-  height: 100vh;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
 
   > main {
     width: 428px;
@@ -10,7 +11,7 @@ export const Container = styled.div`
     align-items: flex-start;
     flex-direction: column;
 
-    margin: 0 auto;
+    margin: 0 auto 100px;
     padding: 0 32px 90px;
 
     .top {
@@ -39,25 +40,10 @@ export const Container = styled.div`
       }
     }
 
-    .save-changes {
-      margin-top: 32px;
-      button {
-        width: 364px;
-        height: 48px;
-        padding: 12px 24px;
-        background-color: ${({ theme }) => theme.COLORS.RED_100};
-        transition: 0.5s;
-      }
-    }
-
-    .save-changes button:hover {
-      background-color: ${({ theme }) => theme.COLORS.RED_200};
-    }
-
     @media (min-width: 900px) {
       width: 1120px;
       padding: 0;
-      margin: 0 150px;
+      margin: 0 150px 100px;
     }
   }
 
@@ -71,16 +57,10 @@ export const Container = styled.div`
         padding: 0;
 
         position: absolute;
-        left: 160px;
+        left: 135px;
 
         h1 {
           font-size: 32px;
-        }
-      }
-
-      .save-changes {
-        button {
-          width: 500px;
         }
       }
     }
@@ -120,7 +100,6 @@ export const Form = styled.form`
       gap: 8px;
 
       margin-top: 10px;
-      /* padding: 12px 32px; */
 
       font-size: 14px;
       cursor: pointer;
@@ -207,16 +186,31 @@ export const Form = styled.form`
         background-color: ${({ theme }) => theme.COLORS.DARK_700};
       }
     }
+  }
 
-    .description {
-      div {
+  .description {
+    margin-bottom: 32px;
+    div {
+      width: 364px;
+
+      textarea {
         width: 364px;
-
-        textarea {
-          width: 364px;
-        }
       }
     }
+  }
+
+  .save-changes {
+    button {
+      width: 364px;
+      height: 48px;
+      padding: 12px 24px;
+      background-color: ${({ theme }) => theme.COLORS.RED_100};
+      transition: 0.5s;
+    }
+  }
+
+  .save-changes button:hover {
+    background-color: ${({ theme }) => theme.COLORS.RED_200};
   }
 
   @media (min-width: 900px) {
@@ -244,10 +238,24 @@ export const Form = styled.form`
       }
     }
 
+    .description {
+      div {
+        width: 1043px;
+
+        textarea {
+          width: 1043px;
+        }
+      }
+    }
+
     .save-changes {
       position: absolute;
-      bottom: -180px;
+      bottom: 184px;
       right: 220px;
+
+      button {
+        width: 172px;
+      }
     }
   }
 
@@ -310,6 +318,12 @@ export const Form = styled.form`
         textarea {
           width: 500px;
         }
+      }
+    }
+
+    .save-changes {
+      button {
+        width: 500px;
       }
     }
   }

@@ -10,10 +10,6 @@ export const Container = styled.div`
 
   background-color: ${({ theme }) => theme.COLORS.DARK_700};
   border-radius: 8px;
-
-  @media (min-width: 900px) {
-    width: 1043px;
-  }
 `
 
 export const TextareaInput = styled.textarea`
@@ -39,9 +35,5 @@ export const TextareaInput = styled.textarea`
 
   &:focus {
     border: 1px solid ${({ theme }) => theme.COLORS.LIGHT_100};
-  }
-
-  @media (min-width: 900px) {
-    width: 1043px;
   }
 `

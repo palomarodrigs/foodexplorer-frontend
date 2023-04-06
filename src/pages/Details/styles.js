@@ -3,11 +3,10 @@ import styled from 'styled-components'
 export const Container = styled.div`
   position: relative;
   min-height: 100vh;
+  overflow: hidden;
 
   display: flex;
   flex-direction: column;
-
-  overflow: hidden;
 
   > main {
     display: flex;
@@ -15,8 +14,8 @@ export const Container = styled.div`
     align-content: center;
     align-items: center;
 
-    padding: 0 56px 33px;
-    margin: 0 0 54px;
+    padding: 0 56px;
+    margin-bottom: 150px;
 
     .top {
       margin: 36px 0 16px;

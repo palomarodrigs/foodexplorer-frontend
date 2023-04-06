@@ -44,7 +44,7 @@ export const Container = styled.div`
 export const Form = styled.div`
   grid-area: form;
   width: 360px;
-  margin: 0 auto 240px;
+  margin: 0 auto;
 
   > div:nth-child(4) {
     margin-top: 24px;

@@ -3,9 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
   position: relative;
   min-height: 100vh;
-
   overflow: hidden;
-  margin-bottom: 282px;
 
   .table-mobile {
     max-width: 358px;
@@ -85,7 +83,6 @@ export const Container = styled.div`
 
   @media (min-width: 900px) {
     > main {
-      margin-bottom: 370px;
       padding: 0 150px;
     }
 

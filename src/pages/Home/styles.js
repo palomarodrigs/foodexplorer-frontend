@@ -3,18 +3,19 @@ import styled from 'styled-components'
 export const Container = styled.div`
   position: relative;
   min-height: 100vh;
+  overflow: hidden;
 
   display: flex;
   flex-direction: column;
 
   main {
     padding: 0;
+    margin-bottom: 100px;
 
-    .content {
-      padding: 15px;
-      margin-bottom: 100px;
+    .main-content {
+      padding: 15px 15px 0;
 
-      .banner {
+      .front-cover {
         margin: 44px 0 0;
       }
     }
@@ -39,7 +40,7 @@ export const Container = styled.div`
       /* padding-right: 1px; */
       overflow-y: auto;
 
-      .content {
+      .main-content {
         margin-bottom: 70px;
       }
 
@@ -58,10 +59,10 @@ export const Container = styled.div`
       justify-content: center;
       padding: 0;
 
-      .content {
+      .main-content {
         padding: 55px 0 25px;
 
-        .banner {
+        .front-cover {
           margin: 44px 0 0;
           width: 500px;
         }

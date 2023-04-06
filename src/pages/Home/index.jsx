@@ -1,7 +1,7 @@
 import { Container } from './styles'
 
 import { Header } from '../../components/Header'
-import { Banner } from '../../components/Banner'
+import { Hero } from '../../components/Hero'
 import { Footer } from '../../components/Footer'
 import { Carousel } from '../../components/Carousel'
 
@@ -13,8 +13,8 @@ export function Home() {
       <Header />
 
       <main>
-        <div className='content'>
-          <Banner className='banner' />
+        <div className='main-content'>
+          <Hero className='front-cover' />
 
           <div className='carousels'>
             <Carousel isEdit={isEdit} />

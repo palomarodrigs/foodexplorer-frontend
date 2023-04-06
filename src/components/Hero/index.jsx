@@ -2,7 +2,7 @@ import { Container } from './styles'
 
 import Background from '../../assets/background.jpg'
 
-export function Banner() {
+export function Hero() {
   return (
     <Container>
       <img src={Background} alt='' />
