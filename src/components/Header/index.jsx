@@ -4,15 +4,14 @@ import { Link } from 'react-router-dom'
 import { Container } from './styles'
 
 import { LogoAdmin } from '../LogoAdmin'
-import { MenuMobile } from '../MenuMobile'
+import { BurgerMenu } from '../BurgerMenu'
 import { DishCount } from '../DishCount'
 import { Logo } from '../Logo'
 import { Input } from '../Input'
 import { Button } from '../Button'
 
-import { useNavigate } from 'react-router-dom'
-
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export function Header() {
   const [menuIsVisible, setMenuIsVisible] = useState(false)
@@ -32,7 +31,7 @@ export function Header() {
   return (
     <Container>
       <FiMenu size={32} className='menu-mobile' onClick={() => setMenuIsVisible(true)} />
-      <MenuMobile
+      <BurgerMenu
         menuIsVisible={menuIsVisible}
         setMenuIsVisible={setMenuIsVisible}
         onClick={() => setMenuIsVisible(false)}

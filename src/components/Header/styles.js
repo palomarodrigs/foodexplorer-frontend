@@ -158,6 +158,7 @@ export const Container = styled.div`
 
   @media (min-width: 600px) and (max-width: 900px) {
     gap: ${({ isAdmin }) => (isAdmin ? 50 : 0)};
+    justify-content: space-between;
 
     .menu-mobile {
       display: flex;

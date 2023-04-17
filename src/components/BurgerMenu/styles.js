@@ -100,6 +100,7 @@ export const Container = styled.div`
     }
 
     main {
+      justify-content: flex-start;
       .btns button {
         width: 100%;
       }
