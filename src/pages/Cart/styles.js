@@ -1,20 +1,18 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  width: 100%;
-
-  overflow: hidden;
-
   position: relative;
+  width: 100%;
   min-height: 100vh;
+  overflow: hidden;
 
   > main {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 0 140px;
-    margin-bottom: 65px;
+    padding: 32px;
+    margin-bottom: 150px;
 
     > .orders {
       display: flex;
@@ -23,8 +21,7 @@ export const Container = styled.div`
       h2 {
         font-weight: 500;
         font-size: 32px;
-
-        margin: 34px 0 48px;
+        margin: 0 0 48px;
       }
 
       p {
@@ -33,71 +30,44 @@ export const Container = styled.div`
       }
 
       .advance {
+        width: 275px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 47px;
+      }
+    }
+
+    @media (min-width: 900px) {
+      padding: 0 140px;
+
+      > .orders {
+        h2 {
+          margin: 34px 0 48px;
+        }
+        .advance {
+          display: none;
+        }
+      }
+
+      > .payment {
         display: none;
       }
     }
 
-    > .payment {
-      display: flex;
-      flex-direction: column;
+    @media (min-width: 600px) and (max-width: 900px) {
+      justify-content: center;
+      margin: 34px 0 155px;
 
-      h2 {
-        margin-bottom: 32px;
+      main {
+        padding: 55px;
       }
 
-      .method-payment {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        width: 530px;
-        height: 445px;
-
-        border-radius: 8px;
-        border: 1px solid ${({ theme }) => theme.COLORS.LIGHT_500};
-
-        .options {
-          display: flex;
-
-          .pix-option {
-            border-radius: 8px 0px 0px 0px;
-          }
-
-          .creditcard-option {
-            border-radius: 0px 8px 0px 0px;
-          }
-
-          button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Roboto';
-
-            width: 265px;
-            height: 81px;
-
-            margin-bottom: 44px;
-
-            color: ${({ theme }) => theme.COLORS.LIGHT_100};
-            border: 1px solid ${({ theme }) => theme.COLORS.LIGHT_500};
-            background-color: ${({ theme }) => theme.COLORS.DARK_700};
-
-            img {
-              width: 24px;
-              margin-right: 8px;
-            }
-          }
-        }
-      }
-    }
-
-    @media (max-width: 480px) {
-      padding: 32px;
-
-      > .orders {
+      .orders {
         h2 {
           margin: 0 0 48px;
         }
+
         .advance {
           display: flex;
           align-items: center;

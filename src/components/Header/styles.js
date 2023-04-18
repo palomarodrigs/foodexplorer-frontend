@@ -69,7 +69,7 @@ export const Container = styled.div`
     height: 104px;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     white-space: nowrap;
     gap: 32px;
@@ -100,7 +100,6 @@ export const Container = styled.div`
 
       a {
         font-family: 'Roboto';
-        font-weight: 400;
         font-size: 16px;
         color: ${({ theme }) => theme.COLORS.TITLE_200};
       }

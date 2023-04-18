@@ -18,7 +18,6 @@ export const Container = styled.div`
   }
 
   @media (min-width: 900px) {
-    align-items: baseline;
     margin: 0;
 
     span {

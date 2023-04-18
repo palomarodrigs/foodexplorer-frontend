@@ -1,15 +1,36 @@
 import { Container } from './styles'
+import { useState, useLayoutEffect } from 'react'
 
-import { Header } from '../../components/Header'
 import { Order } from '../../components/Order'
+import { Header } from '../../components/Header'
 import { Button } from '../../components/Button'
 import { Footer } from '../../components/Footer'
-
-import Pix from '../../assets/pix-logo.svg'
-import QrCode from '../../assets/qrcode.svg'
-import CreditCard from '../../assets/credit-card.svg'
+import { PaymentStatus } from '../../components/PaymentStatus'
 
 export function Cart() {
+  const [methodPaymentOpen, setMethodPaymentOpen] = useState(false)
+
+  const handlePayment = () => {
+    setMethodPaymentOpen((prev) => !prev)
+  }
+
+  useLayoutEffect(() => {
+    const handleResize = () => {
+      const isResponsive = window.innerWidth <= 900
+      if (isResponsive) {
+        setMethodPaymentOpen(false)
+      } else {
+        setMethodPaymentOpen(true)
+      }
+    }
+
+    window.addEventListener('resize', handleResize)
+    handleResize()
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   return (
     <Container>
       <Header />
@@ -23,29 +44,9 @@ export function Cart() {
           <Order />
           <p>Total: $100</p>
 
-          <Button className='advance' title='Advance' />
+          <Button className='advance' title='Advance' onClick={handlePayment} />
         </section>
-
-        <section className='payment'>
-          <h2>Payment</h2>
-
-          <div className='method-payment'>
-            <div className='options'>
-              <button className='pix-option'>
-                <img src={Pix} alt='' />
-                Pix
-              </button>
-
-              <button className='creditcard-option'>
-                <img src={CreditCard} alt='' />
-                Credit Card
-              </button>
-            </div>
-            <div className='qrcode'>
-              <img src={QrCode} alt='' />
-            </div>
-          </div>
-        </section>
+        {methodPaymentOpen ? <PaymentStatus btnClose={handlePayment} /> : null}
       </main>
 
       <Footer />

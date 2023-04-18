@@ -11,7 +11,7 @@ export function BurgerMenu({ menuIsVisible, setMenuIsVisible }) {
     document.body.style.overflowY = menuIsVisible ? 'hidden' : 'auto'
   }, [menuIsVisible])
 
-  const isAdmin = true
+  const isAdmin = false
 
   return (
     <Container isVisible={menuIsVisible}>
