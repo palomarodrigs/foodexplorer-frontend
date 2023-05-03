@@ -1,21 +1,21 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  width: 100%;
   height: 114px;
 
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 55px;
+  gap: 32px;
 
-  padding: 64px 28px;
-
+  padding: 64px 27px;
   background-color: ${({ theme }) => theme.COLORS.DARK_800};
 
   .menu-mobile {
     display: flex;
     justify-content: center;
     align-items: center;
-
     padding: 0;
 
     svg {
@@ -23,11 +23,8 @@ export const Container = styled.div`
     }
   }
 
-  button {
-    margin-top: 10px;
-  }
-
   .logo {
+    margin: 0 auto;
     h1 {
       font-size: 21px;
     }
@@ -37,44 +34,41 @@ export const Container = styled.div`
     }
   }
 
-  .receipt-mobile {
-    display: flex;
-    justify-content: center;
-    width: 32px;
-
-    > img {
-      width: 30px;
-    }
-  }
-
-  #favorites,
-  #history {
-    display: none;
+  button {
+    margin-top: 10px;
   }
 
   .search {
     display: none;
   }
 
-  .btns {
+  nav {
     display: none;
   }
 
-  .content {
+  .btn-new,
+  .btn-cart {
     display: none;
   }
 
-  @media (min-width: 900px) {
-    width: 100%;
+  .profile {
+    display: none;
+  }
+
+  .logout {
+    display: none;
+  }
+
+  @media (min-width: 1143px) {
     height: 104px;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    white-space: nowrap;
     gap: 32px;
 
-    padding: 24px 123px;
+    white-space: nowrap;
+    padding: 24px 100px;
 
     a {
       color: ${({ theme }) => theme.COLORS.TITLE_200};
@@ -82,11 +76,15 @@ export const Container = styled.div`
       font-size: 16px;
     }
 
-    button {
+    .btn-new,
+    .btn-cart {
+      display: block;
+      width: 180px;
       margin: 0;
     }
 
     .search {
+      display: block;
       margin-top: 8px;
 
       input {
@@ -94,60 +92,41 @@ export const Container = styled.div`
       }
     }
 
-    .btns {
-      display: flex;
-      gap: 24px;
+    nav {
+      display: block;
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        list-style: none;
 
-      a {
-        font-family: 'Roboto';
-        font-size: 16px;
-        color: ${({ theme }) => theme.COLORS.TITLE_200};
+        #favorites,
+        #history {
+          font-family: 'Roboto';
+          font-size: 16px;
+          color: ${({ theme }) => theme.COLORS.TITLE_200};
+        }
       }
     }
 
-    .content {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
+    .profile {
+      display: block;
+      width: 60px;
+      padding: 2px;
 
-    button {
-      /* width: 147px; */
+      border: 2px solid ${({ theme }) => theme.COLORS.LIGHT_100};
+      border-radius: 100%;
+      object-fit: cover;
     }
 
     .logout {
-      width: 25px;
-
-      > svg {
-        font-size: 25px;
-        color: ${({ theme }) => theme.COLORS.LIGHT_100};
-      }
-    }
-
-    a {
-      .profile {
-        width: 64px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 1px solid ${({ theme }) => theme.COLORS.LIGHT_500};
-      }
+      display: block;
+      font-size: 32px;
+      color: ${({ theme }) => theme.COLORS.LIGHT_100};
     }
 
     .menu-mobile {
       display: none;
-    }
-
-    .receipt-mobile {
-      display: none;
-    }
-
-    #favorites,
-    #history {
-      display: block;
-    }
-
-    .search {
-      display: block;
     }
 
     .cart-mobile {
@@ -155,9 +134,8 @@ export const Container = styled.div`
     }
   }
 
-  @media (min-width: 600px) and (max-width: 900px) {
-    gap: ${({ isAdmin }) => (isAdmin ? 50 : 0)};
-    justify-content: space-between;
+  @media (min-width: 768px) and (max-width: 1143px) {
+    gap: 0;
 
     .menu-mobile {
       display: flex;
@@ -173,9 +151,6 @@ export const Container = styled.div`
     }
 
     .logo {
-      /* position: ${({ isAdmin }) => (isAdmin ? 'fixed' : 'static')};
-      left: ${({ isAdmin }) => (isAdmin ? 55 : 0)}; */
-
       h1 {
         font-size: 21px;
       }
@@ -189,30 +164,20 @@ export const Container = styled.div`
       display: none;
     }
 
-    .btns {
+    nav {
       display: none;
     }
 
-    .content {
+    .btn-new,
+    .btn-cart {
       display: none;
     }
-    /* 
-    button {
-      width: 26px;
-    } */
 
-    .receipt-mobile {
-      display: flex;
-      justify-content: center;
-      width: 32px;
-
-      > img {
-        width: 30px;
-      }
+    .profile {
+      display: none;
     }
 
-    #favorites,
-    #history {
+    .logout {
       display: none;
     }
   }

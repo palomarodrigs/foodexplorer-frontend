@@ -1,4 +1,4 @@
-import { FiSearch, FiLogOut, FiMenu } from 'react-icons/fi'
+import { FiSearch, FiLogOut, FiMenu, FiClock, FiHeart } from 'react-icons/fi'
 
 import { Link } from 'react-router-dom'
 import { Container } from './styles'
@@ -43,32 +43,37 @@ export function Header() {
         <Input icon={FiSearch} placeholder='Search for dishes or ingredients' />
       </div>
 
-      <Link id='favorites' to='/favorites'>
-        My favorites
+      <nav>
+        <ul>
+          <li>
+            <Link id='favorites' to='/favorites'>
+              My favorites
+            </Link>
+          </li>
+          <li>
+            <Link id='history' to='/history'>
+              Order history
+            </Link>
+          </li>
+        </ul>
+      </nav>
+
+      {isAdmin ? (
+        <Button className='btn-new' title='New dish' onClick={() => handleNewDish()} />
+      ) : (
+        <Button className='btn-cart' title='Cart (0)' onClick={() => handleCart()} />
+      )}
+
+      <Link to='/profile'>
+        <img className='profile' src='https://github.com/palomarodrigs.png' alt='Profile image' />
       </Link>
 
-      <Link id='history' to='/history'>
-        Order history
-      </Link>
-
-      <div className='content'>
-        {isAdmin ? (
-          <Button className='new' title='New dish' onClick={() => handleNewDish()} />
-        ) : (
-          <Button title='Cart (0)' onClick={() => handleCart()} />
-        )}
-
-        <button className='logout'>
-          <FiLogOut />
-        </button>
-
-        <Link to='/profile'>
-          <img className='profile' src='https://github.com/palomarodrigs.png' alt='Profile image' />
-        </Link>
-      </div>
+      <button className='logout'>
+        <FiLogOut />
+      </button>
 
       <div className='cart-mobile' onClick={() => handleCart()}>
-        {isAdmin ? '' : <DishCount />}
+        {isAdmin ? null : <DishCount />}
       </div>
     </Container>
   )
