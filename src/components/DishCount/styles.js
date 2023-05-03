@@ -13,8 +13,6 @@ export const Container = styled.button`
     top: -40px;
     z-index: 1;
 
-    /* pointer-events: none; */
-
     display: flex;
     justify-content: center;
     border-radius: 99px;

@@ -24,14 +24,14 @@ export const Container = styled.div`
       flex-wrap: wrap;
     }
 
-    @media (min-width: 900px) {
+    @media (min-width: 1143px) {
       padding: 0 150px;
       h1 {
         margin: 34px 0 48px;
       }
     }
 
-    @media (min-width: 600px) and (max-width: 900px) {
+    @media (min-width: 768px) and (max-width: 1143px) {
       padding: 55px;
       align-items: center;
 

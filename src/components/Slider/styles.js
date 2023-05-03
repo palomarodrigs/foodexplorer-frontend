@@ -92,7 +92,7 @@ export const Container = styled.div`
     display: none;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1143px) {
     .title {
       font-size: 32px;
       font-weight: 500;
@@ -198,7 +198,7 @@ export const Container = styled.div`
     }
   }
 
-  @media (min-width: 600px) and (max-width: 900px) {
+  @media (min-width: 768px) and (max-width: 1143px) {
     .title {
       font-size: 18px;
       margin-top: 62px;

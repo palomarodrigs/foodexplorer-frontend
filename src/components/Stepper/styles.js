@@ -17,7 +17,7 @@ export const Container = styled.div`
     font-size: 20px;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1143px) {
     margin: 0;
 
     span {

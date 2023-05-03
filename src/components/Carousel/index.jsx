@@ -1,4 +1,5 @@
 import { Container } from './styles'
+
 import CardCarousel from '../../components/Carousel/components/CardCarousel'
 
 import { meals, desserts, drinks } from './data'

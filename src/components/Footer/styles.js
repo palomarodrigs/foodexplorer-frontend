@@ -35,9 +35,8 @@ export const Container = styled.footer`
     font-size: 12px;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1143px) {
     padding: 24px 123px;
-
     .logo {
       h1 {
         font-size: 24px;
@@ -55,7 +54,7 @@ export const Container = styled.footer`
     }
   }
 
-  @media (min-width: 600px) and (max-width: 900px) {
+  @media (min-width: 768px) and (max-width: 1143px) {
     .logo {
       gap: 6px;
     }

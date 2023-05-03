@@ -34,7 +34,7 @@ export const Container = styled.div`
     }
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1143px) {
     > header {
       padding: 0 123px;
     }
@@ -54,7 +54,7 @@ export const Form = styled.div`
     margin: 0 auto 206px;
   }
 
-  @media (min-width: 600px) and (max-width: 900px) {
+  @media (min-width: 768px) and (max-width: 1143px) {
     margin: 0 auto 370px;
   }
 `

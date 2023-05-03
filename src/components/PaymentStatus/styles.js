@@ -170,7 +170,7 @@ export const Container = styled.div`
     }
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1143px) {
     position: static;
     padding: 0;
     background: transparent;
@@ -226,7 +226,7 @@ export const Container = styled.div`
     }
   }
 
-  @media (min-width: 600px) and (max-width: 900px) {
+  @media (min-width: 768px) and (max-width: 1143px) {
     .content {
       margin: 0 auto;
     }
@@ -252,7 +252,7 @@ export const PaymentContainer = styled.div`
     color: ${({ theme }) => theme.COLORS.LIGHT_200};
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1143px) {
     gap: 50px;
 
     span {

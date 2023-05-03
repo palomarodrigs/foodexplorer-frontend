@@ -13,12 +13,9 @@ export function Home() {
       <Header />
 
       <main>
-        <div className='main-content'>
-          <Hero className='front-cover' />
-
-          <div className='carousels'>
-            <Carousel isEdit={isEdit} />
-          </div>
+        <Hero className='front-cover' />
+        <div className='carousels'>
+          <Carousel isEdit={isEdit} />
         </div>
 
         <Footer />

@@ -21,7 +21,7 @@ export const Container = styled.div`
     }
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1143px) {
     justify-content: space-between;
     flex-direction: row;
 
@@ -35,7 +35,7 @@ export const Container = styled.div`
     }
   }
 
-  @media (min-width: 600px) and (max-width: 900px) {
+  @media (min-width: 768px) and (max-width: 1143px) {
     flex-direction: column;
 
     .header {

@@ -40,7 +40,7 @@ export const Container = styled.div`
     }
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1143px) {
     > .favorites-list {
       margin-bottom: 48px;
     }

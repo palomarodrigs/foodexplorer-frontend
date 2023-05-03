@@ -21,7 +21,7 @@ export const Container = styled.div`
     }
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1143px) {
     justify-content: space-between;
     flex-direction: row;
 
@@ -35,7 +35,7 @@ export const Container = styled.div`
     }
   }
 
-  @media (min-width: 600px) and (max-width: 900px) {
+  @media (min-width: 768px) and (max-width: 1143px) {
     flex-direction: column;
 
     .header {
@@ -96,7 +96,7 @@ export const Form = styled.form`
     display: none;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1143px) {
     width: 476px;
     height: 540px;
     flex-direction: column;
@@ -120,7 +120,7 @@ export const Form = styled.form`
       border: 1px solid ${({ theme }) => theme.COLORS.LIGHT_100};
     }
   }
-  @media (min-width: 600px) and (max-width: 900px) {
+  @media (min-width: 768px) and (max-width: 1143px) {
     margin: 0;
     padding: 0;
     justify-content: center;

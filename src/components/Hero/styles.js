@@ -45,7 +45,7 @@ export const Container = styled.div`
     }
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1143px) {
     width: 1120px;
     height: 273px;
     gap: 100px;
@@ -71,7 +71,7 @@ export const Container = styled.div`
     }
   }
 
-  @media (min-width: 600px) and (max-width: 900px) {
+  @media (min-width: 768px) and (max-width: 1143px) {
     width: 100%;
     height: 120px;
 

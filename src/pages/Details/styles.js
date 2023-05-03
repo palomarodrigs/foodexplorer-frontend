@@ -91,7 +91,7 @@ export const Container = styled.div`
     display: none;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1143px) {
     main {
       flex-direction: row;
       margin: 0 auto 186px;
@@ -141,7 +141,7 @@ export const Container = styled.div`
     }
   }
 
-  @media (min-width: 600px) and (max-width: 900px) {
+  @media (min-width: 768px) and (max-width: 1143px) {
     main {
       flex-direction: column;
       align-content: center;

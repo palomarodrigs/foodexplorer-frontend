@@ -38,7 +38,7 @@ export const Container = styled.div`
       }
     }
 
-    @media (min-width: 900px) {
+    @media (min-width: 1143px) {
       padding: 0 140px;
 
       > .orders {
@@ -55,7 +55,7 @@ export const Container = styled.div`
       }
     }
 
-    @media (min-width: 600px) and (max-width: 900px) {
+    @media (min-width: 768px) and (max-width: 1143px) {
       justify-content: center;
       margin: 34px 0 155px;
 

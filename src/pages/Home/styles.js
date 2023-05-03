@@ -1,28 +1,18 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  position: relative;
+  width: 100%;
   min-height: 100vh;
+  position: relative;
   overflow: hidden;
 
-  display: flex;
-  flex-direction: column;
-
   main {
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 15px 0;
     margin-bottom: 100px;
-
-    .main-content {
-      padding: 15px 15px 0;
-
-      .front-cover {
-        margin: 44px 0 0;
-      }
-    }
-
-    .carousels {
-      justify-content: flex-start;
-    }
 
     ::-webkit-scrollbar {
       display: none;
@@ -31,45 +21,23 @@ export const Container = styled.div`
     ::-webkit-scrollbar-thumb {
       display: none;
     }
-  }
 
-  @media (min-width: 900px) {
-    overflow: hidden;
-
-    > main {
+    @media (min-width: 1143px) {
       /* padding-right: 1px; */
       overflow-y: auto;
-
-      .main-content {
-        margin-bottom: 70px;
-      }
 
       .carousels {
         display: flex;
         justify-content: center;
       }
     }
-  }
 
-  @media (min-width: 600px) and (max-width: 900px) {
-    main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
+    @media (min-width: 768px) and (max-width: 1143px) {
+      padding: 55px 46px;
 
-      .main-content {
-        padding: 55px 0 25px;
-
-        .front-cover {
-          margin: 44px 0 0;
-          width: 500px;
-        }
-      }
-
-      .carousels {
-        justify-content: flex-start;
+      .front-cover {
+        margin: 44px 0 0;
+        /* width: 450px; */
       }
 
       ::-webkit-scrollbar {

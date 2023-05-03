@@ -81,7 +81,7 @@ export const Container = styled.div`
     display: none;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1143px) {
     > main {
       padding: 0 150px;
     }
@@ -94,7 +94,7 @@ export const Container = styled.div`
       display: none;
     }
 
-    @media (min-width: 600px) and (max-width: 900px) {
+    @media (min-width: 768px) and (max-width: 1143px) {
       display: flex;
       justify-content: center;
 
