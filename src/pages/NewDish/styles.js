@@ -1,53 +1,56 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  position: relative;
+  width: 100%;
+
   min-height: 100vh;
+  position: relative;
   overflow: hidden;
 
   > main {
-    width: 428px;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
 
-    margin: 0 auto 100px;
+    margin: 0 auto;
     padding: 0 32px 90px;
 
     .top {
       display: flex;
       flex-direction: column;
       gap: 24px;
-
-      margin: 0;
+      margin: 40px 0 32px -12px;
 
       a {
         display: flex;
         align-items: center;
-
         font-weight: 500;
         font-size: 24px;
-
-        margin-top: 40px;
-        margin-left: -12px;
+        margin-left: -10px;
         color: ${({ theme }) => theme.COLORS.LIGHT_100};
       }
 
       h1 {
         font-weight: 500;
         font-size: 32px;
-        margin-bottom: 32px;
       }
     }
 
-    @media (min-width: 900px) {
+    @media (min-width: 1143px) {
+      .top {
+        display: flex;
+        align-items: center;
+
+        h1 {
+          margin-left: 45px;
+        }
+      }
       width: 1120px;
       padding: 0;
-      margin: 0 150px 100px;
     }
   }
 
-  @media (min-width: 600px) and (max-width: 900px) {
+  @media (min-width: 768px) and (max-width: 1143px) {
     > main {
       width: 428px;
       align-items: center;
@@ -71,15 +74,16 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   overflow-y: auto;
+  margin-bottom: 80px;
 
   > .input-wrapper {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 32px;
-
-    margin-bottom: 32px;
 
     div {
       > input {
@@ -213,12 +217,14 @@ export const Form = styled.form`
     background-color: ${({ theme }) => theme.COLORS.RED_200};
   }
 
-  @media (min-width: 900px) {
-    align-items: flex-start;
-    margin-bottom: 140px;
+  @media (min-width: 1143px) {
+    align-items: flex-end;
+    margin-bottom: 116px;
 
     > .input-wrapper {
       padding: 0;
+      margin: 0 auto;
+
       label {
         width: 229px;
       }
@@ -249,17 +255,14 @@ export const Form = styled.form`
     }
 
     .save-changes {
-      position: absolute;
-      bottom: 184px;
-      right: 220px;
-
+      margin-right: 40px;
       button {
         width: 172px;
       }
     }
   }
 
-  @media (min-width: 600px) and (max-width: 900px) {
+  @media (min-width: 768px) and (max-width: 1143px) {
     align-items: center;
 
     > .input-wrapper {

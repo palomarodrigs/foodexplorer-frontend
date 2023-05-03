@@ -60,13 +60,12 @@ export function EditDish() {
               <Section title='Price' />
               <Input placeholder='$0' />
             </div>
-          </div>
 
-          <div className='description'>
-            <Section title='Description' />
-            <Textarea placeholder='Caesar Salad is a refreshing option for the summer.' />
+            <div className='description'>
+              <Section title='Description' />
+              <Textarea placeholder='Caesar Salad is a refreshing option for the summer.' />
+            </div>
           </div>
-
           <div className='btns'>
             <Button className='delete' title='Delete dish' />
             <Button className='save' title='Save changes' />

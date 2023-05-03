@@ -60,11 +60,11 @@ export function NewDish() {
               <Section title='Price' />
               <Input placeholder='$0' />
             </div>
-          </div>
 
-          <div className='description'>
-            <Section title='Description' />
-            <Textarea placeholder='Briefly talk about the dish, its ingredients, and composition' />
+            <div className='description'>
+              <Section title='Description' />
+              <Textarea placeholder='Briefly talk about the dish, its ingredients, and composition' />
+            </div>
           </div>
 
           <div className='save-changes'>
