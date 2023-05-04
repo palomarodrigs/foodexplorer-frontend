@@ -1,4 +1,4 @@
-import { FiSearch, FiLogOut, FiMenu, FiClock, FiHeart } from 'react-icons/fi'
+import { FiSearch, FiLogOut, FiMenu } from 'react-icons/fi'
 
 import { Link } from 'react-router-dom'
 import { Container } from './styles'
@@ -12,6 +12,7 @@ import { Button } from '../Button'
 
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../../hooks/auth'
 
 export function Header() {
   const [menuIsVisible, setMenuIsVisible] = useState(false)
@@ -19,6 +20,8 @@ export function Header() {
   const isAdmin = false
 
   const navigate = useNavigate()
+
+  const { signOut } = useAuth()
 
   function handleCart() {
     navigate('/cart')
@@ -68,7 +71,7 @@ export function Header() {
         <img className='profile' src='https://github.com/palomarodrigs.png' alt='Profile image' />
       </Link>
 
-      <button className='logout'>
+      <button className='logout' onClick={signOut}>
         <FiLogOut />
       </button>
 
