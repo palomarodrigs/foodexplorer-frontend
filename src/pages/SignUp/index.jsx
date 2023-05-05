@@ -12,20 +12,22 @@ export function SignUp() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [loading, setLoading] = useState(false)
+  const [isCreating, setIsCreating] = useState(false)
 
   const navigate = useNavigate()
 
   function handleSignUp() {
+    setIsCreating(false)
     if (!name || !email || !password) {
       return alert('Fill in all fields!')
     }
 
     if (password.length < 6) {
+      setIsCreating(false)
       return alert('The password must contain at least 6 characters!')
     }
 
-    setLoading(true)
+    setIsCreating(true)
 
     api
       .post('/users', { name, email, password })
@@ -62,9 +64,17 @@ export function SignUp() {
         />
 
         <label htmlFor='password'>Password</label>
-        <Input placeholder='minimum 6 characters' onChange={(e) => setPassword(e.target.value)} />
+        <Input
+          placeholder='minimum 6 characters'
+          type='password'
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-        <Button title='Create account' onClick={handleSignUp} disabled={loading} />
+        <Button
+          title={isCreating ? 'Creating...' : 'Create'}
+          onClick={handleSignUp}
+          disabled={isCreating}
+        />
 
         <Link to='/'>I already have account</Link>
       </Form>

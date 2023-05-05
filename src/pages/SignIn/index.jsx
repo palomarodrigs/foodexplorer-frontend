@@ -12,13 +12,24 @@ import LogoExplorer from '../../assets/logo-explorer.svg'
 export function SignIn() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [loading, setLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const { signIn } = useAuth()
 
   function handleSignIn() {
+    setIsLoading(true)
     signIn({ email, password })
-    setLoading(true)
+      .then(() => {
+        setIsLoading(false)
+      })
+      .catch((error) => {
+        setIsLoading(false)
+        if (error.response) {
+          alert(error.response.data.message)
+        } else {
+          alert('It was not possible to sign in')
+        }
+      })
   }
 
   return (
@@ -38,9 +49,17 @@ export function SignIn() {
         />
 
         <label htmlFor='password'>Password</label>
-        <Input placeholder='minimum 6 characters' onChange={(e) => setPassword(e.target.value)} />
+        <Input
+          placeholder='minimum 6 characters'
+          type='password'
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-        <Button title='Enter' onClick={handleSignIn} disabled={loading} />
+        <Button
+          title={isLoading ? 'Loading...' : 'Enter'}
+          onClick={handleSignIn}
+          disabled={isLoading}
+        />
 
         <Link to='/register'>Create account</Link>
       </Form>
