@@ -112,6 +112,7 @@ export const Container = styled.div`
     .profile {
       display: block;
       width: 60px;
+      height: 60px;
       padding: 2px;
 
       border: 2px solid ${({ theme }) => theme.COLORS.LIGHT_100};

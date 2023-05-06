@@ -3,10 +3,12 @@ import styled from 'styled-components'
 export const Container = styled.div`
   position: relative;
   min-height: 100vh;
+  overflow-y: auto;
 
   display: grid;
   grid-template-rows: 114px auto;
   grid-template-areas: 'header' 'form';
+  overflow: auto;
 
   > header {
     grid-area: header;
@@ -23,20 +25,8 @@ export const Container = styled.div`
       width: 32px;
     }
 
-    .logout {
-      svg {
-        width: 32px;
-      }
-    }
-
     button {
       color: ${({ theme }) => theme.COLORS.LIGHT_100};
-    }
-  }
-
-  @media (min-width: 1143px) {
-    > header {
-      padding: 0 123px;
     }
   }
 `
@@ -50,12 +40,8 @@ export const Form = styled.div`
     margin-top: 24px;
   }
 
-  @media (min-width: 900px) {
-    margin: 0 auto 206px;
-  }
-
-  @media (min-width: 768px) and (max-width: 1143px) {
-    margin: 0 auto 370px;
+  @media (min-width: 1143px) {
+    margin-bottom: 150px;
   }
 `
 

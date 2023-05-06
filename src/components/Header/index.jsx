@@ -13,15 +13,19 @@ import { Button } from '../Button'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../hooks/auth'
+import { api } from '../../services/api'
+
+import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
 
 export function Header() {
   const [menuIsVisible, setMenuIsVisible] = useState(false)
 
+  const navigate = useNavigate()
+  const { signOut, user } = useAuth()
+
   const isAdmin = false
 
-  const navigate = useNavigate()
-
-  const { signOut } = useAuth()
+  const avatarURL = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
 
   function handleCart() {
     navigate('/cart')
@@ -68,16 +72,14 @@ export function Header() {
       )}
 
       <Link to='/profile'>
-        <img className='profile' src='https://github.com/palomarodrigs.png' alt='Profile image' />
+        <img className='profile' src={avatarURL} alt='Profile image' />
       </Link>
 
       <button className='logout' onClick={signOut}>
         <FiLogOut />
       </button>
 
-      <div className='cart-mobile' onClick={() => handleCart()}>
-        {isAdmin ? null : <DishCount />}
-      </div>
+      <div className='cart-mobile'>{isAdmin ? null : <DishCount />}</div>
     </Container>
   )
 }
