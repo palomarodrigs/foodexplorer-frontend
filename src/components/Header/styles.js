@@ -23,19 +23,8 @@ export const Container = styled.div`
     }
   }
 
-  .logo {
-    margin: 0 auto;
-    h1 {
-      font-size: 21px;
-    }
-
-    img {
-      width: 24px;
-    }
-  }
-
   button {
-    margin-top: 10px;
+    margin-top: 20px;
   }
 
   .search {
@@ -136,50 +125,7 @@ export const Container = styled.div`
   }
 
   @media (min-width: 768px) and (max-width: 1143px) {
-    gap: 0;
-
-    .menu-mobile {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      padding: 0;
-      background-color: transparent;
-
-      svg {
-        width: 24px;
-      }
-    }
-
-    .logo {
-      h1 {
-        font-size: 21px;
-      }
-
-      img {
-        width: 24px;
-      }
-    }
-
-    .search {
-      display: none;
-    }
-
-    nav {
-      display: none;
-    }
-
-    .btn-new,
-    .btn-cart {
-      display: none;
-    }
-
-    .profile {
-      display: none;
-    }
-
-    .logout {
-      display: none;
-    }
+    justify-content: space-between;
+    padding: 64px 27px;
   }
 `

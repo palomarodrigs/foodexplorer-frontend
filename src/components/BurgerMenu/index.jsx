@@ -1,17 +1,18 @@
 import { FiX, FiSearch } from 'react-icons/fi'
 import { Container } from './styles'
+import { Link } from 'react-router-dom'
 
 import { Input } from '../Input'
 
-import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
+import { useAuth } from '../../hooks/auth'
 
 export function BurgerMenu({ menuIsVisible, setMenuIsVisible }) {
+  const { signOut, user } = useAuth()
+
   useEffect(() => {
     document.body.style.overflowY = menuIsVisible ? 'hidden' : 'auto'
   }, [menuIsVisible])
-
-  const isAdmin = false
 
   return (
     <Container isVisible={menuIsVisible}>
@@ -24,9 +25,15 @@ export function BurgerMenu({ menuIsVisible, setMenuIsVisible }) {
         <Input icon={FiSearch} placeholder='Search for dishes or ingredients' />
 
         <div className='btns'>
-          {isAdmin ? <Link to='/new'>New dish</Link> : <Link to='/profile'>Profile</Link>}
+          {user && user.isAdmin ? (
+            <Link to='/new'>New dish</Link>
+          ) : (
+            <Link to='/profile'>Profile</Link>
+          )}
           <Link to='/favorites'>My favorites</Link>
-          <button className='logout'>Logout</button>
+          <button className='logout' onClick={signOut}>
+            Logout
+          </button>
         </div>
       </main>
     </Container>

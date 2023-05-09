@@ -4,8 +4,10 @@ import { OrderTable } from '../../components/OrderTable'
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 
+import { useAuth } from '../../hooks/auth'
+
 export function OrderHistory() {
-  const isAdmin = false
+  const { user } = useAuth()
 
   return (
     <Container>
@@ -23,7 +25,7 @@ export function OrderHistory() {
             <thead>
               <tr>
                 <th>000004</th>
-                {isAdmin ? '' : <th>🔴 Pending</th>}
+                {user && user.isAdmin ? '' : <th>🔴 Pending</th>}
                 <th>05/20 at 18h00</th>
               </tr>
             </thead>
@@ -36,7 +38,7 @@ export function OrderHistory() {
                   </p>
                 </td>
 
-                {isAdmin ? (
+                {user && user.isAdmin ? (
                   <td>
                     <select name='type'>
                       <option value='pending'>🔴 Pending</option>
@@ -55,7 +57,7 @@ export function OrderHistory() {
             <thead>
               <tr>
                 <th>000004</th>
-                {isAdmin ? '' : <th>🔴 Pending</th>}
+                {user && user.isAdmin ? '' : <th>🔴 Pending</th>}
                 <th>05/20 at 18h00</th>
               </tr>
             </thead>
@@ -68,7 +70,7 @@ export function OrderHistory() {
                   </p>
                 </td>
 
-                {isAdmin ? (
+                {user && user.isAdmin ? (
                   <td>
                     <select name='type'>
                       <option value='pending'>🔴 Pending</option>

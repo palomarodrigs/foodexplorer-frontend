@@ -11,10 +11,12 @@ import { Footer } from '../../components/Footer'
 
 import { useNavigate } from 'react-router-dom'
 
+import { useAuth } from '../../hooks/auth'
+
 import Ravanello from '../../assets/ravanello.png'
 
 export function Details() {
-  const isAdmin = false
+  const { user } = useAuth()
 
   const navigate = useNavigate()
 
@@ -23,7 +25,7 @@ export function Details() {
   }
 
   return (
-    <Container isAdmin={isAdmin}>
+    <Container>
       <Header />
 
       <main>
@@ -50,7 +52,7 @@ export function Details() {
             <Tag title='jdfhe' />
           </div>
 
-          {isAdmin ? (
+          {user && user.isAdmin ? (
             <Button className='edit' title='Edit dish' onClick={() => handleEditDish()} />
           ) : (
             <div className='btns'>

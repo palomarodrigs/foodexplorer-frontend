@@ -10,14 +10,14 @@ function AuthProvider({ children }) {
   async function signIn({ email, password }) {
     try {
       const response = await api.post('/sessions', { email, password })
-      const { user, token } = response.data
+      const { user, token, isAdmin } = response.data
 
       localStorage.setItem('@foodexplorer:user', JSON.stringify(user))
       localStorage.setItem('@foodexplorer:token', token)
 
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
-      setData({ user, token })
+      setData({ user, token, isAdmin })
     } catch (error) {
       if (error.response) {
         alert(error.response.data.message)

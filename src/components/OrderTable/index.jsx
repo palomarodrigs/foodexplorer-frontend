@@ -1,7 +1,9 @@
 import { Container } from './styles'
 
+import { useAuth } from '../../hooks/auth'
+
 export function OrderTable() {
-  const isAdmin = false
+  const { user } = useAuth()
 
   return (
     <Container>
@@ -18,7 +20,7 @@ export function OrderTable() {
           </thead>
           <tbody>
             <tr>
-              {isAdmin ? (
+              {user && user.isAdmin ? (
                 <td>
                   <select name='type'>
                     <option value='pending'>🔴 Pending</option>
@@ -44,7 +46,7 @@ export function OrderTable() {
             </tr>
 
             <tr>
-              {isAdmin ? (
+              {user && user.isAdmin ? (
                 <td>
                   <select name='type'>
                     <option value='pending'>🔴 Pending</option>

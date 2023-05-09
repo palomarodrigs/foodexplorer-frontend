@@ -3,7 +3,6 @@ import { FiSearch, FiLogOut, FiMenu } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import { Container } from './styles'
 
-import { LogoAdmin } from '../LogoAdmin'
 import { BurgerMenu } from '../BurgerMenu'
 import { DishCount } from '../DishCount'
 import { Logo } from '../Logo'
@@ -18,14 +17,13 @@ import { api } from '../../services/api'
 import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
 
 export function Header() {
+  const { signOut, user } = useAuth()
+
+  const avatarURL = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
+
   const [menuIsVisible, setMenuIsVisible] = useState(false)
 
   const navigate = useNavigate()
-  const { signOut, user } = useAuth()
-
-  const isAdmin = false
-
-  const avatarURL = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
 
   function handleCart() {
     navigate('/cart')
@@ -44,7 +42,7 @@ export function Header() {
         onClick={() => setMenuIsVisible(false)}
       />
 
-      <div className='logo'>{isAdmin ? <LogoAdmin /> : <Logo />}</div>
+      <Logo />
 
       <div className='search'>
         <Input icon={FiSearch} placeholder='Search for dishes or ingredients' />
@@ -65,21 +63,23 @@ export function Header() {
         </ul>
       </nav>
 
-      {isAdmin ? (
+      {user && user.isAdmin ? (
         <Button className='btn-new' title='New dish' onClick={() => handleNewDish()} />
       ) : (
         <Button className='btn-cart' title='Cart (0)' onClick={() => handleCart()} />
       )}
 
-      <Link to='/profile'>
-        <img className='profile' src={avatarURL} alt='Profile image' />
-      </Link>
+      {user && user.isAdmin ? null : (
+        <Link to='/profile'>
+          <img className='profile' src={avatarURL} alt='Profile image' />
+        </Link>
+      )}
 
       <button className='logout' onClick={signOut}>
         <FiLogOut />
       </button>
 
-      <div className='cart-mobile'>{isAdmin ? null : <DishCount />}</div>
+      <div className='cart-mobile'>{user && user.isAdmin ? null : <DishCount />}</div>
     </Container>
   )
 }

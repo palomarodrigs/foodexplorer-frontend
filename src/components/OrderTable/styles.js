@@ -50,7 +50,7 @@ export const Container = styled.div`
           font-family: 'Roboto';
           font-size: 14px;
 
-          width: 175px;
+          width: 100%;
           height: 48px;
 
           display: flex;
