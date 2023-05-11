@@ -1,7 +1,7 @@
 import { FiCamera, FiUser, FiMail, FiLock, FiChevronLeft } from 'react-icons/fi'
 import { Container, Form, Avatar } from './styles'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useAuth } from '../../hooks/auth'
 
 import { Input } from '../../components/Input'

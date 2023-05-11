@@ -16,19 +16,24 @@ import { IngredientItem } from '../../components/IngredientItem'
 import { api } from '../../services/api'
 
 export function NewDish() {
+  const [image, setImage] = useState(null)
   const [title, setTitle] = useState('')
-  const [category, setCategory] = useState('main')
+  const [category, setCategory] = useState('meals')
   const [ingredients, setIngredients] = useState([])
   const [newIngredient, setNewIngredient] = useState('')
   const [price, setPrice] = useState('')
   const [description, setDescription] = useState('')
-  const [selectedFile, setSelectedFile] = useState(null)
+  const [isSaving, setIsSaving] = useState(false)
 
   const navigate = useNavigate()
 
   function handleAddIngredient() {
-    setIngredients((prev) => [...prev, newIngredient])
-    setNewIngredient('')
+    if (newIngredient.trim() === '') {
+      alert('Please enter an ingredient!')
+    } else {
+      setIngredients((prev) => [...prev, newIngredient])
+      setNewIngredient('')
+    }
   }
 
   function handleRemoveIngredient(deleted) {
@@ -36,31 +41,37 @@ export function NewDish() {
   }
 
   async function handleCreateNewDish() {
-    const dishData = {
-      title,
-      category,
-      ingredients,
-      price,
-      description
+    const formData = new FormData()
+    formData.append('image', image)
+    formData.append('title', title)
+    formData.append('category', category)
+    formData.append('ingredients', ingredients.join(','))
+    formData.append('price', price)
+    formData.append('description', description)
+
+    const priceValue = formData.get('price')
+    if (priceValue === '0') {
+      alert('The price must be greater than $0!')
+      return
     }
 
-    const formData = new FormData()
-    formData.append('image', selectedFile)
+    if (!image || !title || !category || !ingredients || !price || !description) {
+      alert('All fields are required to create the dish.')
+      return
+    }
 
-    const config = {
-      headers: {
-        'Content-Type': 'multipart/form-data'
+    setIsSaving(true)
+    try {
+      await api.post('/dishes', formData)
+      alert('Dish created successfully!')
+      navigate(-1)
+    } catch (error) {
+      if (error.response) {
+        alert(error.response.data.message)
+      } else {
+        alert('It was not possible create the dish.')
       }
     }
-
-    await api.post('/dishes', dishData, formData, config)
-    alert('Dish created successfully!')
-    navigate(-1)
-  }
-
-  function handleFileChange(event) {
-    const file = event.target.files[0]
-    setSelectedFile(file)
   }
 
   return (
@@ -80,9 +91,9 @@ export function NewDish() {
             <div className='upload-image'>
               <Section title='Dish image' />
               <label htmlFor='upload'>
-                {selectedFile ? selectedFile.name : 'Select image'}
+                {image ? image.name : 'Select image'}
                 <FiUpload />
-                <input id='upload' type='file' onChange={handleFileChange} />
+                <input id='upload' type='file' onChange={(e) => setImage(e.target.files[0])} />
               </label>
             </div>
 
@@ -94,7 +105,7 @@ export function NewDish() {
             <div className='options'>
               <Section title='Category' />
               <select name='type' value={category} onChange={(e) => setCategory(e.target.value)}>
-                <option value='main'>Main</option>
+                <option value='meals'>Meals</option>
                 <option value='drinks'>Drinks</option>
                 <option value='desserts'>Desserts</option>
               </select>
@@ -136,7 +147,11 @@ export function NewDish() {
           </div>
 
           <div className='save-changes'>
-            <Button title='Save changes' onClick={handleCreateNewDish} />
+            <Button
+              title={isSaving ? 'Saving...' : 'Save changes'}
+              onClick={handleCreateNewDish}
+              disabled={isSaving}
+            />
           </div>
         </Form>
       </main>
