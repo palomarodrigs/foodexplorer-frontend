@@ -90,6 +90,11 @@ export const Form = styled.form`
   a {
     font-size: 14px;
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
+    transition: 0.3s;
+  }
+
+  a:hover {
+    color: ${({ theme }) => theme.COLORS.CAKE_100};
   }
 
   h1 {

@@ -61,7 +61,9 @@ export function SignIn() {
           disabled={isLoading}
         />
 
-        <Link to='/register'>Create account</Link>
+        <Link className='register' to='/register'>
+          Create account
+        </Link>
       </Form>
     </Container>
   )
