@@ -1,5 +1,11 @@
 import { FiSearch, FiLogOut, FiMenu } from 'react-icons/fi'
 
+import { useNavigate } from 'react-router-dom'
+
+import { useState } from 'react'
+
+import { useAuth } from '../../hooks/auth'
+
 import { Link } from 'react-router-dom'
 import { Container } from './styles'
 
@@ -9,19 +15,16 @@ import { Logo } from '../Logo'
 import { Input } from '../Input'
 import { Button } from '../Button'
 
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../../hooks/auth'
 import { api } from '../../services/api'
 
 import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
 
-export function Header() {
+export function Header({ search }) {
   const { signOut, user } = useAuth()
 
-  const avatarURL = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
-
   const [menuIsVisible, setMenuIsVisible] = useState(false)
+
+  const avatarURL = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
 
   const navigate = useNavigate()
 
@@ -40,12 +43,17 @@ export function Header() {
         menuIsVisible={menuIsVisible}
         setMenuIsVisible={setMenuIsVisible}
         onClick={() => setMenuIsVisible(false)}
+        search={search}
       />
 
       <Logo />
 
       <div className='search'>
-        <Input icon={FiSearch} placeholder='Search for dishes or ingredients' />
+        <Input
+          icon={FiSearch}
+          placeholder='Search for dishes or ingredients'
+          onChange={(e) => search(e.target.value)}
+        />
       </div>
 
       <nav>

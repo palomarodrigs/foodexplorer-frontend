@@ -1,14 +1,28 @@
 import { FiX, FiSearch } from 'react-icons/fi'
 import { Container } from './styles'
+
 import { Link } from 'react-router-dom'
 
 import { Input } from '../Input'
 
-import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+import { useEffect, useState } from 'react'
 import { useAuth } from '../../hooks/auth'
 
-export function BurgerMenu({ menuIsVisible, setMenuIsVisible }) {
+export function BurgerMenu({ menuIsVisible, setMenuIsVisible, search }) {
   const { signOut, user } = useAuth()
+  const [searchValue, setSearchValue] = useState('')
+
+  const navigate = useNavigate()
+
+  function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+      search(searchValue)
+      navigate(`/?search=${searchValue}`)
+      setMenuIsVisible(false)
+    }
+  }
 
   useEffect(() => {
     document.body.style.overflowY = menuIsVisible ? 'hidden' : 'auto'
@@ -22,7 +36,13 @@ export function BurgerMenu({ menuIsVisible, setMenuIsVisible }) {
       </header>
 
       <main>
-        <Input icon={FiSearch} placeholder='Search for dishes or ingredients' />
+        <Input
+          icon={FiSearch}
+          placeholder='Search for dishes or ingredients'
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+          onKeyPress={handleKeyPress}
+        />
 
         <div className='btns'>
           {user && user.isAdmin ? (

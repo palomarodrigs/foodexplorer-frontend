@@ -1,12 +1,10 @@
 import { Container } from './styles'
 
-import Ravanello from '../../assets/ravanello.png'
-
 export function Order() {
   return (
     <Container>
       <div className='orders'>
-        <img src={Ravanello} alt='' />
+        <img src='' alt='' />
         <div className='details'>
           <div className='product'>
             <span>1 x</span>

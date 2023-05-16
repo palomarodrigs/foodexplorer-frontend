@@ -168,7 +168,7 @@ export const Container = styled.div`
       align-items: center;
       justify-content: flex-end;
 
-      width: 303px;
+      width: 274px;
       height: 485px;
 
       color: ${({ theme }) => theme.COLORS.LIGHT_100};

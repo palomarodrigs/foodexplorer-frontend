@@ -1,15 +1,14 @@
 import { Container } from './styles'
+import CardCarousel from './components/CardCarousel'
 
-import CardCarousel from '../../components/Carousel/components/CardCarousel'
+export function Carousel({ meals, desserts, drinks }) {
+  const isSearchEmpty = meals.length === 0 && desserts.length === 0 && drinks.length === 0
 
-import { meals, desserts, drinks } from './data'
-
-export function Carousel({ isEdit }) {
   return (
     <Container>
-      <CardCarousel props={meals} title='Meals' isEdit={isEdit} />
-      <CardCarousel props={desserts} title='Desserts' isEdit={isEdit} />
-      <CardCarousel props={drinks} title='Drinks' isEdit={isEdit} />
+      {!isSearchEmpty && meals.length > 0 && <CardCarousel dishes={meals} title='Meals' />}
+      {!isSearchEmpty && desserts.length > 0 && <CardCarousel dishes={desserts} title='Desserts' />}
+      {!isSearchEmpty && drinks.length > 0 && <CardCarousel dishes={drinks} title='Drinks' />}
     </Container>
   )
 }
