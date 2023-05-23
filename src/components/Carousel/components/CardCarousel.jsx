@@ -43,7 +43,7 @@ const CardCarousel = ({ dishes, title }) => {
           <SwiperSlide key={String(dish.id)}>
             <button className='favorite'>
               {user && user.isAdmin ? (
-                <Link to='/edit'>
+                <Link to={`/edit/${dish.id}`}>
                   <FiEdit />
                 </Link>
               ) : (

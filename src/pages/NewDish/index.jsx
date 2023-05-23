@@ -68,8 +68,10 @@ export function NewDish() {
     } catch (error) {
       if (error.response) {
         alert(error.response.data.message)
+        setIsSaving(false)
       } else {
         alert('It was not possible create the dish.')
+        setIsSaving(false)
       }
     }
   }
@@ -134,7 +136,7 @@ export function NewDish() {
 
             <div className='price'>
               <Section title='Price' />
-              <Input placeholder='$0' onChange={(e) => setPrice(e.target.value)} />
+              <Input type='number' placeholder='$0' onChange={(e) => setPrice(e.target.value)} />
             </div>
 
             <div className='description'>

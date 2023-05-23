@@ -30,7 +30,7 @@ export function Details() {
   const navigate = useNavigate()
 
   function handleEditDish() {
-    navigate('/edit')
+    navigate(`/edit/${params.id}`)
   }
 
   useEffect(() => {
