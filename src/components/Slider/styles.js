@@ -119,7 +119,7 @@ export const Container = styled.div`
       .favorite {
         right: 18px;
       }
-
+      
       a {
         img {
           width: 176px;
@@ -136,8 +136,13 @@ export const Container = styled.div`
         font-family: 'Roboto';
         font-size: 14px;
         text-align: center;
+        overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
         width: 208px;
-        height: 44px;
+        // height: 44px;
         color: ${({ theme }) => theme.COLORS.LIGHT_200};
       }
 

@@ -3,12 +3,13 @@ import { SwiperSlide } from 'swiper/react'
 
 import { Link } from 'react-router-dom'
 
-import Slider from '../../Slider'
+import { useState } from 'react'
+import { useAuth } from '../../../hooks/auth'
+import { useCart } from '../../../hooks/cart'
 
+import Slider from '../../Slider'
 import { Stepper } from '../../Stepper'
 import { Button } from '../../Button'
-
-import { useAuth } from '../../../hooks/auth'
 
 import { api } from '../../../services/api'
 
@@ -31,6 +32,17 @@ const settings = {
 
 const CardCarousel = ({ dishes, title }) => {
   const { user } = useAuth()
+  const { addToCart } = useCart()
+  const [selectedQuantity, setSelectedQuantity] = useState(1)
+
+  const handleAddDishToCart = (dish) => {
+    addToCart(dish, selectedQuantity)
+    setSelectedQuantity(1)
+  }
+
+  const handleQuantityChange = (quantity) => {
+    setSelectedQuantity(quantity)
+  }
 
   return (
     <Slider title={title} settings={settings}>
@@ -57,12 +69,21 @@ const CardCarousel = ({ dishes, title }) => {
             </Link>
 
             <p>{dish.description}</p>
-            <span>{dish.price}</span>
+            <span>${dish.price}</span>
 
             {!user || !user.isAdmin ? (
               <div className='btns'>
-                <Stepper />
-                <Button className='include' title='include' />
+                <Stepper
+                  initialQuantity={1}
+                  onDecrement={() => handleQuantityChange(selectedQuantity - 1)}
+                  onIncrement={() => handleQuantityChange(selectedQuantity + 1)}
+                />
+
+                <Button
+                  className='include'
+                  title='include'
+                  onClick={() => handleAddDishToCart(dish)}
+                />
               </div>
             ) : (
               ''

@@ -18,9 +18,14 @@ import { Button } from '../Button'
 import { api } from '../../services/api'
 
 import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
+import { useCart } from '../../hooks/cart'
 
 export function Header({ search }) {
   const { signOut, user } = useAuth()
+
+  const { cartItems } = useCart()
+
+  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0)
 
   const [menuIsVisible, setMenuIsVisible] = useState(false)
 
@@ -74,7 +79,11 @@ export function Header({ search }) {
       {user && user.isAdmin ? (
         <Button className='btn-new' title='New dish' onClick={() => handleNewDish()} />
       ) : (
-        <Button className='btn-cart' title='Cart (0)' onClick={() => handleCart()} />
+        <Button
+          className='btn-cart'
+          title={`Cart (${totalQuantity})`}
+          onClick={() => handleCart()}
+        />
       )}
 
       {user && user.isAdmin ? null : (

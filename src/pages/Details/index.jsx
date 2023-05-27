@@ -18,16 +18,30 @@ import { useAuth } from '../../hooks/auth'
 import { api } from '../../services/api'
 
 import imagePlaceholder from '../../assets/image_placeholder.svg'
+import { useCart } from '../../hooks/cart'
 
 export function Details() {
   const { user } = useAuth()
+  const { addToCart } = useCart()
 
   const [data, setData] = useState(null)
+  const [selectedQuantity, setSelectedQuantity] = useState(1)
 
   const imageURL = data?.image ? `${api.defaults.baseURL}/files/${data.image}` : imagePlaceholder
 
+  const totalPrice = data ? data.price * selectedQuantity : 0
+
   const params = useParams()
   const navigate = useNavigate()
+
+  const handleAddDishToCart = (dish) => {
+    addToCart(dish, selectedQuantity)
+    setSelectedQuantity(1)
+  }
+
+  const handleQuantityChange = (quantity) => {
+    setSelectedQuantity(quantity)
+  }
 
   function handleEditDish() {
     navigate(`/edit/${params.id}`)
@@ -73,8 +87,16 @@ export function Details() {
               <Button className='edit' title='Edit dish' onClick={() => handleEditDish()} />
             ) : (
               <div className='btns'>
-                <Stepper />
-                <Button className='include' title={`include · $${data.price}`} />
+                <Stepper
+                  initialQuantity={1}
+                  onDecrement={() => handleQuantityChange(selectedQuantity - 1)}
+                  onIncrement={() => handleQuantityChange(selectedQuantity + 1)}
+                />
+                <Button
+                  className='include'
+                  title={`include · $${totalPrice.toFixed(2)}`}
+                  onClick={() => handleAddDishToCart(data)}
+                />
               </div>
             )}
           </div>

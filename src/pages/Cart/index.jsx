@@ -1,5 +1,10 @@
-import { Container } from './styles'
+import { FiShoppingCart, FiChevronLeft } from 'react-icons/fi'
 import { useState, useLayoutEffect } from 'react'
+import { Container } from './styles'
+
+import { useCart } from '../../hooks/cart'
+
+import { Link } from 'react-router-dom'
 
 import { Order } from '../../components/Order'
 import { Header } from '../../components/Header'
@@ -9,6 +14,8 @@ import { PaymentStatus } from '../../components/PaymentStatus'
 
 export function Cart() {
   const [methodPaymentOpen, setMethodPaymentOpen] = useState(false)
+
+  const { cartItems, getTotalPrice } = useCart()
 
   const handlePayment = () => {
     setMethodPaymentOpen((prev) => !prev)
@@ -36,17 +43,36 @@ export function Cart() {
       <Header />
 
       <main>
-        <section className='orders'>
-          <h2>My order</h2>
-          <Order />
-          <Order />
-          <Order />
-          <Order />
-          <p>Total: $100</p>
+        {cartItems.length > 0 ? (
+          <>
+            <section className='cart'>
+              <h2>My Order</h2>
+              {cartItems.map((item) => (
+                <div className='order' key={item.id}>
+                  <Order item={item} />
+                </div>
+              ))}
+              <p>Total: ${getTotalPrice()}</p>
+              <Button className='advance' title='Advance' onClick={handlePayment} />
+            </section>
 
-          <Button className='advance' title='Advance' onClick={handlePayment} />
-        </section>
-        {methodPaymentOpen ? <PaymentStatus btnClose={handlePayment} /> : null}
+            {methodPaymentOpen ? <PaymentStatus btnClose={handlePayment} /> : null}
+          </>
+        ) : (
+          <section className='cart-empty'>
+            <FiShoppingCart size={64} />
+
+            <p>
+              Your cart is empty. Explore our menu and discover irresistible dishes to add to your
+              cart.
+            </p>
+
+            <Link to='/'>
+              <FiChevronLeft />
+              return to home
+            </Link>
+          </section>
+        )}
       </main>
 
       <Footer />
