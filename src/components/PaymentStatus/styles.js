@@ -86,7 +86,7 @@ export const Container = styled.div`
     .qrcode img {
       width: 179px;
       height: 179px;
-      margin-top: 40px;
+      margin-bottom: 10px;
     }
 
     .card-fields {
@@ -94,6 +94,7 @@ export const Container = styled.div`
       flex-direction: column;
       gap: 50px;
       padding: 0;
+      margin-bottom: 50px;
 
       #number-card {
         display: flex;
@@ -194,9 +195,8 @@ export const Container = styled.div`
       }
 
       .qrcode img {
-        width: 270px;
-        height: 270px;
-        margin: 0;
+        width: 215px;
+        height: 215px;
       }
 
       .card-fields {

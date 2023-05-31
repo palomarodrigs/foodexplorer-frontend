@@ -9,10 +9,7 @@ export const Container = styled.div`
     max-width: 358px;
     display: flex;
     flex-direction: column;
-
-    overflow: auto;
-
-    margin: 0 auto 24px;
+    margin: 24px auto 95px;
 
     h1 {
       font-weight: 500;
@@ -77,15 +74,33 @@ export const Container = styled.div`
     }
   }
 
+  .order-empty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin: 180px auto;
+
+      p {
+        text-align: center;
+        font-size: 18px;
+        color: ${({ theme }) => theme.COLORS.LIGHT_200};
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        font-size: 16px;
+        color: ${({ theme }) => theme.COLORS.CAKE_100};
+      }
+    }
+
   .table-desktop {
     display: none;
   }
 
   @media (min-width: 1143px) {
-    > main {
-      padding: 0 150px;
-    }
-
     .table-desktop {
       display: block;
     }
@@ -93,8 +108,9 @@ export const Container = styled.div`
     .table-mobile {
       display: none;
     }
+  }
 
-    @media (min-width: 768px) and (max-width: 1143px) {
+  @media (min-width: 768px) and (max-width: 1143px) {
       display: flex;
       justify-content: center;
 
@@ -173,6 +189,5 @@ export const Container = styled.div`
           }
         }
       }
-    }
   }
 `

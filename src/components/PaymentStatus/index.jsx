@@ -12,6 +12,7 @@ import { Input } from '../../components/Input'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useCart } from '../../hooks/cart'
+import { api } from '../../services/api'
 
 export function PaymentStatus({ btnClose }) {
   const [number, setNumber] = useState('')
@@ -23,7 +24,7 @@ export function PaymentStatus({ btnClose }) {
 
   const navigate = useNavigate()
 
-  const { clearCart } = useCart()
+  const { cartItems, clearCart } = useCart()
 
   const handleNumberCard = (event) => {
     const limit = 19
@@ -64,7 +65,7 @@ export function PaymentStatus({ btnClose }) {
     }
   }
 
-  const handleFinishPayment = () => {
+  const handleFinishPayment = async () => {
     setIsLoading(true)
 
     if (isCredit) {
@@ -87,9 +88,28 @@ export function PaymentStatus({ btnClose }) {
       }
     }
 
-    alert('Payment accepted! You will be redirected to track your order.')
-    navigate('/history')
-    clearCart()
+    try {
+      await api.post('/carts', {
+        status: '🔴 Pending',
+        paymentMethod: isPix ? 'pix' : 'credit',
+        orders: cartItems.map((item) => ({
+          id: item.id,
+          title: item.title,
+          quantity: item.quantity
+        }))
+      })
+      alert('Payment accepted! You will be redirected to track your order.')
+      navigate('/history')
+      clearCart()
+    } catch (error) {
+      if (error.response) {
+        alert(error.response.data.message)
+        setIsLoading(false)
+      } else {
+        alert('It was not possible to process the payment.')
+        setIsLoading(false)
+      }
+    }
   }
 
   function selectPix() {
@@ -168,15 +188,15 @@ export function PaymentStatus({ btnClose }) {
                   />
                 </div>
               </div>
-
-              <Button
-                className='send-payment'
-                title={isLoading ? 'Processing payment...' : 'Finish payment'}
-                onClick={handleFinishPayment}
-                disabled={isLoading}
-              />
             </div>
           )}
+
+          <Button
+            className='send-payment'
+            title={isLoading ? 'Processing payment...' : 'Finish payment'}
+            onClick={handleFinishPayment}
+            disabled={isLoading}
+          />
         </div>
       </div>
     </Container>

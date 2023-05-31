@@ -1,4 +1,4 @@
-import { FiShoppingCart, FiChevronLeft } from 'react-icons/fi'
+import { FiChevronLeft } from 'react-icons/fi'
 import { useState, useLayoutEffect } from 'react'
 import { Container } from './styles'
 
@@ -60,8 +60,6 @@ export function Cart() {
           </>
         ) : (
           <section className='cart-empty'>
-            <FiShoppingCart size={64} />
-
             <p>
               Your cart is empty. Explore our menu and discover irresistible dishes to add to your
               cart.

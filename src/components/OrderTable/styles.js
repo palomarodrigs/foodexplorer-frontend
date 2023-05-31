@@ -3,7 +3,8 @@ import styled from 'styled-components'
 export const Container = styled.div`
   > main {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 118px;
+
 
     h1 {
       font-weight: 500;
@@ -14,7 +15,8 @@ export const Container = styled.div`
       width: 100%;
       border-radius: 8px 8px 0px 0px;
       border: 2px solid ${({ theme }) => theme.COLORS.DARK_900};
-
+      overflow-y: auto;
+      
       table * {
         font-family: 'Roboto';
         font: 14px;
@@ -23,12 +25,10 @@ export const Container = styled.div`
       th {
         padding: 21px 24px;
         border-right: 2px solid ${({ theme }) => theme.COLORS.DARK_900};
-        /* border-bottom: 2px solid ${({ theme }) => theme.COLORS.DARK_900}; */
       }
 
       th:last-child {
         border: 0;
-        /* border-bottom: 2px solid ${({ theme }) => theme.COLORS.DARK_900}; */
       }
 
       td {
