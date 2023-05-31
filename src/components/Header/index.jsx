@@ -33,6 +33,11 @@ export function Header({ search }) {
 
   const navigate = useNavigate()
 
+  const handleSignOut = () => {
+    navigate('/')
+    signOut()
+  }
+
   function handleCart() {
     navigate('/cart')
   }
@@ -92,7 +97,7 @@ export function Header({ search }) {
         </Link>
       )}
 
-      <button className='logout' onClick={signOut}>
+      <button className='logout' onClick={handleSignOut}>
         <FiLogOut />
       </button>
 

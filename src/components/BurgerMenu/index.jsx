@@ -16,6 +16,11 @@ export function BurgerMenu({ menuIsVisible, setMenuIsVisible, search }) {
 
   const navigate = useNavigate()
 
+  const handleSignOut = () => {
+    navigate('/')
+    signOut()
+  }
+
   function handleKeyPress(event) {
     if (event.key === 'Enter') {
       search(searchValue)
@@ -51,7 +56,7 @@ export function BurgerMenu({ menuIsVisible, setMenuIsVisible, search }) {
             <Link to='/profile'>Profile</Link>
           )}
           <Link to='/favorites'>My favorites</Link>
-          <button className='logout' onClick={signOut}>
+          <button className='logout' onClick={handleSignOut}>
             Logout
           </button>
         </div>

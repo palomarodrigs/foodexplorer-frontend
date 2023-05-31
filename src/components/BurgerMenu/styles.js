@@ -87,8 +87,9 @@ export const Container = styled.div`
       }
 
       button {
-        width: 370px;
         display: flex;
+        width: 370px;
+        margin: 0;
       }
     }
   }
