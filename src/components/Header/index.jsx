@@ -1,4 +1,4 @@
-import { FiSearch, FiLogOut, FiMenu } from 'react-icons/fi'
+import { FiSearch, FiLogOut, FiMenu, FiShoppingCart, FiPlusCircle } from 'react-icons/fi'
 
 import { useNavigate } from 'react-router-dom'
 
@@ -68,24 +68,33 @@ export function Header({ search }) {
 
       <nav>
         <ul>
-          <li>
-            <Link id='favorites' to='/favorites'>
-              My favorites
-            </Link>
-          </li>
-          <li>
-            <Link id='history' to='/history'>
-              Order history
-            </Link>
-          </li>
+          {user && user.isAdmin ? (
+            <li>
+              <Link id='history' to='/history'>
+                Order history
+              </Link>
+            </li>
+          ) : (
+            <li>
+              <Link id='favorites' to='/favorites'>
+                My favorites
+              </Link>
+            </li>
+          )}
         </ul>
       </nav>
 
       {user && user.isAdmin ? (
-        <Button className='btn-new' title='New dish' onClick={() => handleNewDish()} />
+        <Button
+          className='btn-new'
+          icon={FiPlusCircle}
+          title='New dish'
+          onClick={() => handleNewDish()}
+        />
       ) : (
         <Button
           className='btn-cart'
+          icon={FiShoppingCart}
           title={`Cart (${totalQuantity})`}
           onClick={() => handleCart()}
         />

@@ -24,7 +24,7 @@ export const Container = styled.div`
   }
 
   button {
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .search {
@@ -67,9 +67,15 @@ export const Container = styled.div`
 
     .btn-new,
     .btn-cart {
-      display: block;
-      width: 180px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 216px;
       margin: 0;
+
+      svg {
+        width: 28px;
+      }
     }
 
     .search {
