@@ -24,6 +24,28 @@ export const Container = styled.div`
       flex-wrap: wrap;
     }
 
+    .favorites-empty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin: 180px auto;
+
+      p {
+        text-align: center;
+        font-size: 18px;
+        color: ${({ theme }) => theme.COLORS.LIGHT_200};
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        font-size: 16px;
+        color: ${({ theme }) => theme.COLORS.CAKE_100};
+      }
+    }
+
     @media (min-width: 1143px) {
       padding: 0 150px;
       h1 {

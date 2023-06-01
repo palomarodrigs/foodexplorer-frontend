@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components'
 
 import { AuthProvider } from './hooks/auth'
 import { CartProvider } from './hooks/cart'
+import { FavoriteProvider } from './hooks/favorite'
 
 import { Routes } from './routes'
 
@@ -16,7 +17,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <GlobalStyles />
       <AuthProvider>
         <CartProvider>
-          <Routes />
+          <FavoriteProvider>
+            <Routes />
+          </FavoriteProvider>
         </CartProvider>
       </AuthProvider>
     </ThemeProvider>

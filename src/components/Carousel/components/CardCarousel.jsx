@@ -4,8 +4,10 @@ import { SwiperSlide } from 'swiper/react'
 import { Link } from 'react-router-dom'
 
 import { useState } from 'react'
+
 import { useAuth } from '../../../hooks/auth'
 import { useCart } from '../../../hooks/cart'
+import { useFavorite } from '../../../hooks/favorite'
 
 import Slider from '../../Slider'
 import { Stepper } from '../../Stepper'
@@ -33,6 +35,7 @@ const settings = {
 const CardCarousel = ({ dishes, title }) => {
   const { user } = useAuth()
   const { addToCart } = useCart()
+  const { addFavorite, isFavorite } = useFavorite()
   const [selectedQuantity, setSelectedQuantity] = useState(1)
 
   const handleAddDishToCart = (dish) => {
@@ -44,6 +47,10 @@ const CardCarousel = ({ dishes, title }) => {
     setSelectedQuantity(quantity)
   }
 
+  const handleAddFavorite = (dish) => {
+    addFavorite(dish)
+  }
+
   return (
     <Slider title={title} settings={settings}>
       {dishes.map((dish) => {
@@ -51,15 +58,17 @@ const CardCarousel = ({ dishes, title }) => {
           ? `${api.defaults.baseURL}/files/${dish.image}`
           : imagePlaceholder
 
+        const isDishFavorite = isFavorite(dish)
+
         return (
           <SwiperSlide key={String(dish.id)}>
-            <button className='favorite'>
+            <button className='favorite' onClick={() => handleAddFavorite(dish)}>
               {user && user.isAdmin ? (
                 <Link to={`/edit/${dish.id}`}>
                   <FiEdit />
                 </Link>
               ) : (
-                <FiHeart />
+                <FiHeart color={isDishFavorite ? 'red' : 'white'} />
               )}
             </button>
 
