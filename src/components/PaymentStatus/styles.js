@@ -13,6 +13,7 @@ export const Container = styled.div`
   padding: 32px;
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+  animation: swiperight 1s 0.3s backwards;
 
   #close {
     position: absolute;
@@ -235,28 +236,40 @@ export const Container = styled.div`
       left: 32px;
     }
   }
+
+  @keyframes swiperight {
+  0% {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 `
 
-export const PaymentContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
+// export const PaymentContainer = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   gap: 24px;
 
-  padding: 32px;
+//   padding: 32px;
 
-  span {
-    font-family: 'Roboto';
-    font-weight: 700;
-    font-size: 20px;
-    color: ${({ theme }) => theme.COLORS.LIGHT_200};
-  }
+//   span {
+//     font-family: 'Roboto';
+//     font-weight: 700;
+//     font-size: 20px;
+//     color: ${({ theme }) => theme.COLORS.LIGHT_200};
+//   }
 
-  @media (min-width: 1143px) {
-    gap: 50px;
+//   @media (min-width: 1143px) {
+//     gap: 50px;
 
-    span {
-      font-size: 24px;
-    }
-  }
-`
+//     span {
+//       font-size: 24px;
+//     }
+//   }
+// `

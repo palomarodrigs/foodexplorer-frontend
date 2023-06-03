@@ -1,16 +1,17 @@
 import styled from 'styled-components'
-import { NewDish } from './../../pages/NewDish/index'
 
 export const Container = styled.div`
   .title {
     font-size: 18px;
     margin-top: 62px;
+    animation: swipeleft 1s 0.3s backwards;
   }
 
   .swiper {
     width: 383px;
     height: 292px;
     margin: 24px 0;
+    animation: swiperight 1s 0.3s backwards;
   }
 
   .swiper-slide {
@@ -28,6 +29,17 @@ export const Container = styled.div`
     border: ${({ theme }) => theme.COLORS.DARK_300};
     border-radius: 8px;
     background-color: ${({ theme }) => theme.COLORS.DARK_300};
+
+    .edit {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+
+      svg {
+        font-size: 24px;
+        color: ${({ theme }) => theme.COLORS.LIGHT_200};
+      }
+    }
 
     .favorite {
       position: fixed;
@@ -132,18 +144,19 @@ export const Container = styled.div`
       }
 
       p {
+        width: 208px;
         display: block;
         font-family: 'Roboto';
         font-size: 14px;
         text-align: center;
+
         overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-        width: 208px;
-        // height: 44px;
+        text-overflow: ellipsis;
         color: ${({ theme }) => theme.COLORS.LIGHT_200};
+
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
       }
 
       span {
@@ -173,7 +186,7 @@ export const Container = styled.div`
       align-items: center;
       justify-content: flex-end;
 
-      width: 274px;
+      width: 304px;
       height: 485px;
 
       color: ${({ theme }) => theme.COLORS.LIGHT_100};
@@ -195,7 +208,7 @@ export const Container = styled.div`
       align-items: center;
       justify-content: flex-end;
 
-      width: 186px;
+      width: 130px;
       height: 485px;
 
       color: ${({ theme }) => theme.COLORS.LIGHT_100};
@@ -263,4 +276,28 @@ export const Container = styled.div`
       display: none;
     }
   }
+
+  @keyframes swipeleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes swiperight {
+  0% {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 `

@@ -15,6 +15,7 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    animation: topdown 700ms;
 
     height: 144px;
     padding: 0 27px 12px 27px;
@@ -27,22 +28,55 @@ export const Container = styled.div`
 
     button {
       color: ${({ theme }) => theme.COLORS.LIGHT_100};
+      animation: swiperight 1s 1.1s backwards;
     }
   }
+
+  @keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  @keyframes swiperight {
+  0% {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 `
 
 export const Form = styled.div`
   grid-area: form;
   width: 360px;
   margin: 0 auto;
+  animation: downtop 1s 0.3s reverse backwards;
 
-  > div:nth-child(4) {
+  div:nth-child(4) {
     margin-top: 24px;
   }
 
   @media (min-width: 1143px) {
     margin-bottom: 150px;
   }
+
+  @keyframes downtop {
+  100% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+}
 `
 
 export const Avatar = styled.div`

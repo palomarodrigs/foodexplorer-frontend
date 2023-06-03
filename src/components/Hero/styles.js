@@ -13,6 +13,7 @@ export const Container = styled.div`
   margin: 44px 0 0;
   border-radius: 2px;
   background: ${({ theme }) => theme.COLORS.GRADIENTS_200};
+  animation: topdown 1s 0.3s backwards;
 
   > img {
     position: absolute;
@@ -100,4 +101,16 @@ export const Container = styled.div`
       }
     }
   }
+
+  @keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 `

@@ -11,6 +11,7 @@ export const Container = styled.div`
 
   padding: 64px 27px;
   background-color: ${({ theme }) => theme.COLORS.DARK_800};
+  animation: topdown 700ms;
 
   .menu-mobile {
     display: flex;
@@ -134,4 +135,16 @@ export const Container = styled.div`
     justify-content: space-between;
     padding: 64px 27px;
   }
+
+  @keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 `

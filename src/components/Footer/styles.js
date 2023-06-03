@@ -13,6 +13,7 @@ export const Container = styled.footer`
 
   padding: 29px 27px;
   background: ${({ theme }) => theme.COLORS.DARK_800};
+  animation: downtop 700ms reverse backwards;
 
   > .logo {
     display: flex;
@@ -59,4 +60,11 @@ export const Container = styled.footer`
       gap: 6px;
     }
   }
+
+  @keyframes downtop {
+  100% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+}
 `

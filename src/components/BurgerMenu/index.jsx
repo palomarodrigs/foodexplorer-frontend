@@ -51,11 +51,16 @@ export function BurgerMenu({ menuIsVisible, setMenuIsVisible, search }) {
 
         <div className='btns'>
           {user && user.isAdmin ? (
-            <Link to='/new'>New dish</Link>
+            <>
+              <Link to='/new'>New dish</Link>
+              <Link to='/history'>Order history</Link>
+            </>
           ) : (
-            <Link to='/profile'>Profile</Link>
+            <>
+              <Link to='/profile'>Profile</Link>
+              <Link to='/favorites'>My favorites</Link>
+            </>
           )}
-          <Link to='/favorites'>My favorites</Link>
           <button className='logout' onClick={handleSignOut}>
             Logout
           </button>

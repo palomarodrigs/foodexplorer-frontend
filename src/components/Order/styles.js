@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  animation: swipeleft 1s 0.4s backwards;
 
   > .orders {
     display: flex;
@@ -48,4 +49,16 @@ export const Container = styled.div`
       }
     }
   }
+
+  @keyframes swipeleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 `

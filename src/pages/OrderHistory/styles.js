@@ -10,6 +10,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     margin: 24px auto 95px;
+    animation: downtop 1s 0.3s reverse backwards;
 
     h1 {
       font-weight: 500;
@@ -85,6 +86,7 @@ export const Container = styled.div`
         text-align: center;
         font-size: 18px;
         color: ${({ theme }) => theme.COLORS.LIGHT_200};
+        animation: swipeleft 1s 0.3s backwards;
       }
 
       a {
@@ -93,6 +95,7 @@ export const Container = styled.div`
         gap: 2px;
         font-size: 16px;
         color: ${({ theme }) => theme.COLORS.CAKE_100};
+        animation: swiperight 1s 0.3s backwards;
       }
     }
 
@@ -112,10 +115,8 @@ export const Container = styled.div`
 
   @media (min-width: 768px) and (max-width: 1143px) {
       display: flex;
+      flex-direction: column;
       justify-content: center;
-
-      padding: 32px;
-      margin-bottom: 400px;
 
       > .table-desktop {
         display: none;
@@ -189,5 +190,36 @@ export const Container = styled.div`
           }
         }
       }
+    }
+
+  @keyframes downtop {
+  100% {
+    opacity: 0;
+    transform: translateY(15px);
   }
+}
+
+  @keyframes swipeleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+  @keyframes swiperight {
+  0% {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 `

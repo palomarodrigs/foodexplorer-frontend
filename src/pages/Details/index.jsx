@@ -67,38 +67,44 @@ export function Details() {
               <FiChevronLeft size={32} />
               return
             </Link>
-
-            <img src={imageURL} alt={data.title} />
           </div>
 
-          <div className='details'>
-            <h1>{data.title}</h1>
-            <p>{data.description}</p>
+          <div className='container'>
+            <div className='cover'>
+              <img src={imageURL} alt={data.title} />
+            </div>
 
-            {data.ingredients && (
-              <div className='tags'>
-                {data.ingredients.map((ingredient) => (
-                  <Tag key={String(ingredient.id)} title={ingredient.name} />
-                ))}
-              </div>
-            )}
+            <div className='details'>
+              <h1>{data.title}</h1>
+              <p>{data.description}</p>
 
-            {user && user.isAdmin ? (
-              <Button className='edit' title='Edit dish' onClick={() => handleEditDish()} />
-            ) : (
-              <div className='btns'>
-                <Stepper
-                  initialQuantity={1}
-                  onDecrement={() => handleQuantityChange(selectedQuantity - 1)}
-                  onIncrement={() => handleQuantityChange(selectedQuantity + 1)}
-                />
-                <Button
-                  className='include'
-                  title={`include · $${totalPrice.toFixed(2)}`}
-                  onClick={() => handleAddDishToCart(data)}
-                />
-              </div>
-            )}
+              {data.ingredients && (
+                <div className='tags'>
+                  {data.ingredients.map((ingredient) => (
+                    <Tag key={String(ingredient.id)} title={ingredient.name} />
+                  ))}
+                </div>
+              )}
+
+              {user && user.isAdmin ? (
+                <Button className='edit' title='Edit dish' onClick={() => handleEditDish()} />
+              ) : (
+                <div className='btns'>
+                  <div className='select-quantity'>
+                    <Stepper
+                      initialQuantity={1}
+                      onDecrement={() => handleQuantityChange(selectedQuantity - 1)}
+                      onIncrement={() => handleQuantityChange(selectedQuantity + 1)}
+                    />
+                  </div>
+                  <Button
+                    className='include'
+                    title={`include · $${totalPrice.toFixed(2)}`}
+                    onClick={() => handleAddDishToCart(data)}
+                  />
+                </div>
+              )}
+            </div>
           </div>
         </main>
       )}

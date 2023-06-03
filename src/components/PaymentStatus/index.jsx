@@ -1,4 +1,4 @@
-import { Container, PaymentContainer } from './styles'
+import { Container } from './styles'
 import { FiX } from 'react-icons/fi'
 
 import Pix from '../../assets/pix-logo.svg'

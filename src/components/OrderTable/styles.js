@@ -9,6 +9,7 @@ export const Container = styled.div`
     h1 {
       font-weight: 500;
       margin: 34px 0 34px;
+      animation: swipeleft 1s 0.3s backwards;
     }
 
     table {
@@ -16,6 +17,7 @@ export const Container = styled.div`
       border-radius: 8px 8px 0px 0px;
       border: 2px solid ${({ theme }) => theme.COLORS.DARK_900};
       overflow-y: auto;
+      animation: swiperight 1s 0.3s backwards;
       
       table * {
         font-family: 'Roboto';
@@ -74,4 +76,28 @@ export const Container = styled.div`
       }
     }
   }
+  
+  @keyframes swipeleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+  @keyframes swiperight {
+  0% {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 `

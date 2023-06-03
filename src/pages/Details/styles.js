@@ -18,67 +18,87 @@ export const Container = styled.div`
     margin-bottom: 150px;
 
     .top {
+      position: absolute;
+      left: 20px;
       margin: 36px 0 16px;
+      animation: swiperight 1s 0.3s backwards;
+
       a {
         display: flex;
         align-items: center;
 
         font-weight: 500;
         font-size: 24px;
-
-        margin-left: -30px;
         color: ${({ theme }) => theme.COLORS.LIGHT_100};
-      }
-
-      img {
-        width: 264px;
-        margin: 0;
       }
     }
 
-    .details {
+    .container {
       display: flex;
       flex-direction: column;
       align-items: center;
 
-      h1 {
-        font-size: 27px;
-        font-weight: 500;
-        margin-bottom: 24px;
+      .cover img {
+        width: 264px;
+        margin: 0;
+        margin: 90px 0 16px;
+        animation: topdown 1s 0.3s backwards;
       }
 
-      p {
-        font-size: 16px;
-        text-align: center;
-        margin-bottom: 24px;
-      }
-
-      .tags {
+      .details {
         display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 24px;
-      }
-
-      .btns {
-        display: flex;
+        flex-direction: column;
         align-items: center;
-        margin-top: 48px;
 
+        h1 {
+          font-size: 27px;
+          font-weight: 500;
+          margin-bottom: 24px;
+          animation: topdown 1s 0.7s backwards;
+        }
+    
+        p {
+          font-size: 16px;
+          text-align: center;
+          margin-bottom: 24px;
+          animation: topdown 1s 0.9s backwards;
+        }
+    
+        .tags {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 24px;
+          animation: topdown 1s 1.1s backwards;
+        }
+    
+        .btns {
+          display: flex;
+          align-items: center;
+          margin-top: 48px;
+
+        .select-quantity div {
+          animation: swipeleft 1s 1.1s backwards;
+          margin: 0;
+        }
+    
         .include {
           width: 162px;
           height: 48px;
-
+    
           font-size: 11px;
           font-weight: 500;
           margin-left: 36px;
+          animation: swiperight 1s 1.1s backwards;
         }
       }
-
-      .edit {
-        width: 316px;
-        height: 48px;
-        margin-top: 48px;
+    
+        .edit {
+          width: 316px;
+          height: 48px;
+          margin-top: 48px;
+          animation: swipeleft 1s 1.1s backwards;
+        }
       }
     }
   }
@@ -93,50 +113,58 @@ export const Container = styled.div`
 
   @media (min-width: 1143px) {
     main {
-      flex-direction: row;
-      margin: 0 auto 186px;
       padding: 0 150px;
+      margin: 0 auto 186px;
 
       .top {
+        left: 135px;
         margin-top: 24px;
         a {
           font-size: 24px;
           font-weight: 700;
           margin: 24px 0 42px;
         }
-
-        img {
-          width: 390px;
-          margin-right: 47px;
-        }
       }
 
-      .details {
-        align-items: flex-start;
-        margin-top: 75px;
+      .container {
+        flex-direction: row;
+        margin-top: 42px;
 
-        h1 {
-          font-size: 40px;
+        .cover img {
+          width: 390px;
+          margin-right: 47px;
+          animation: swipeleft 1s 0.3s backwards;
         }
 
-        p {
-          font-size: 24px;
-          text-align: start;
-        }
+        .details {
+          align-items: flex-start;
+          margin-top: 75px;
 
-        .tags {
-          gap: 12px;
-        }
 
-        .btns {
-          .include {
-            font-size: 14px;
+          h1 {
+            font-size: 40px;
+          }
+  
+          p {
+            font-size: 24px;
+            text-align: start;
+          }
+  
+          .tags {
+            gap: 12px;
+          }
+  
+          .btns {
+            .include {
+              font-size: 14px;
+            }
+          }
+  
+          .edit {
+            width: 131px;
           }
         }
 
-        .edit {
-          width: 131px;
-        }
       }
     }
   }
@@ -164,7 +192,7 @@ export const Container = styled.div`
         }
       }
 
-      .details {
+      .container {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -213,4 +241,47 @@ export const Container = styled.div`
       display: none;
     }
   }
+
+  @keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  @keyframes downtop {
+  100% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+}
+
+  @keyframes swipeleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+  @keyframes swiperight {
+  0% {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 `

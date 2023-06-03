@@ -13,6 +13,7 @@ export const Container = styled.div`
     white-space: nowrap;
     gap: 10px;
     margin: 100px 0 73px;
+    animation: topdown 1s;
 
     h1 {
       font-family: 'Roboto';
@@ -28,6 +29,8 @@ export const Container = styled.div`
     .header {
       gap: 19px;
       margin: 0 auto;
+      animation: swipeleft 1s;
+
 
       h1 {
         font-size: 42px;
@@ -52,6 +55,30 @@ export const Container = styled.div`
       }
     }
   }
+
+  @keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  @keyframes swipeleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 `
 
 export const Form = styled.form`
@@ -68,6 +95,7 @@ export const Form = styled.form`
 
   border-radius: 8px;
   background-color: transparent;
+  animation: downtop 1s 0.2s reverse backwards;
 
   > label {
     align-self: flex-start;
@@ -111,6 +139,8 @@ export const Form = styled.form`
 
     border-radius: 16px;
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+    animation: swiperight 1s 0.3s backwards;
+
 
     h1 {
       display: block;
@@ -139,4 +169,23 @@ export const Form = styled.form`
       display: none;
     }
   }
+
+  @keyframes downtop {
+  100% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+}
+
+  @keyframes swiperight {
+  0% {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 `

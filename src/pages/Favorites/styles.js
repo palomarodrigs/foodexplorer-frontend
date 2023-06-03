@@ -17,6 +17,7 @@ export const Container = styled.div`
       font-size: 32px;
       white-space: nowrap;
       margin: 0 0 43px;
+      animation: topdown 1s 0.3s backwards;
     }
 
     .favorites {
@@ -35,6 +36,7 @@ export const Container = styled.div`
         text-align: center;
         font-size: 18px;
         color: ${({ theme }) => theme.COLORS.LIGHT_200};
+        animation: swipeleft 1s 0.3s backwards;
       }
 
       a {
@@ -43,6 +45,7 @@ export const Container = styled.div`
         gap: 2px;
         font-size: 16px;
         color: ${({ theme }) => theme.COLORS.CAKE_100};
+        animation: swiperight 1s 0.3s backwards;
       }
     }
 
@@ -50,6 +53,7 @@ export const Container = styled.div`
       padding: 0 150px;
       h1 {
         margin: 34px 0 48px;
+        animation: swiperight 1s 0.2s backwards;
       }
     }
 
@@ -62,4 +66,47 @@ export const Container = styled.div`
       }
     }
   }
+
+  @keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  @keyframes downtop {
+  100% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+}
+
+  @keyframes swipeleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+  @keyframes swiperight {
+  0% {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 `

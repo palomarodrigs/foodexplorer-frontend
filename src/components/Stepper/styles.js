@@ -6,7 +6,7 @@ export const Container = styled.div`
   justify-content: center;
   gap: 17px;
 
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 
   button {
     color: ${({ theme }) => theme.COLORS.LIGHT_100};

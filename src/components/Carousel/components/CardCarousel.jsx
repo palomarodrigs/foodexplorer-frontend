@@ -53,7 +53,7 @@ const CardCarousel = ({ dishes, title }) => {
 
   return (
     <Slider title={title} settings={settings}>
-      {dishes.map((dish) => {
+      {dishes.map((dish, index) => {
         const imageURL = dish.image
           ? `${api.defaults.baseURL}/files/${dish.image}`
           : imagePlaceholder
@@ -61,16 +61,16 @@ const CardCarousel = ({ dishes, title }) => {
         const isDishFavorite = isFavorite(dish)
 
         return (
-          <SwiperSlide key={String(dish.id)}>
-            <button className='favorite' onClick={() => handleAddFavorite(dish)}>
-              {user && user.isAdmin ? (
-                <Link to={`/edit/${dish.id}`}>
-                  <FiEdit />
-                </Link>
-              ) : (
+          <SwiperSlide key={`${dish.id}-${index}`}>
+            {user && user.isAdmin ? (
+              <Link className='edit' to={`/edit/${dish.id}`}>
+                <FiEdit />
+              </Link>
+            ) : (
+              <button className='favorite' onClick={() => handleAddFavorite(dish)}>
                 <FiHeart color={isDishFavorite ? 'red' : 'white'} />
-              )}
-            </button>
+              </button>
+            )}
 
             <Link to={`/details/${dish.id}`}>
               <img src={imageURL} alt={dish.title} />

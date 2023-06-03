@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   width: 100%;
-
   min-height: 100vh;
   position: relative;
   overflow: hidden;
@@ -28,15 +27,20 @@ export const Container = styled.div`
         font-size: 24px;
         margin-left: -10px;
         color: ${({ theme }) => theme.COLORS.LIGHT_100};
+        animation: swiperight 1s 0.3s backwards;
       }
 
       h1 {
         font-weight: 500;
         font-size: 32px;
+        animation: swipeleft 1s 0.3s backwards;
       }
     }
 
     @media (min-width: 1143px) {
+      width: 1120px;
+      padding: 0;
+      
       .top {
         display: flex;
         align-items: center;
@@ -45,8 +49,6 @@ export const Container = styled.div`
           margin-left: 45px;
         }
       }
-      width: 1120px;
-      padding: 0;
     }
   }
 
@@ -68,6 +70,30 @@ export const Container = styled.div`
       }
     }
   }
+
+  @keyframes swipeleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+  @keyframes swiperight {
+  0% {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 `
 
 export const Form = styled.form`
@@ -77,6 +103,7 @@ export const Form = styled.form`
   justify-content: center;
   overflow-y: auto;
   margin-bottom: 80px;
+  animation: downtop 1s 0.4s reverse backwards;
 
   > .input-wrapper {
     display: flex;
@@ -103,6 +130,7 @@ export const Form = styled.form`
       align-items: center;
       gap: 8px;
 
+      padding: 12px 32px;
       margin-top: 10px;
 
       font-size: 14px;
@@ -220,6 +248,7 @@ export const Form = styled.form`
   @media (min-width: 1143px) {
     align-items: flex-end;
     margin-bottom: 116px;
+    animation: swiperight 1s 0.7s backwards;
 
     > .input-wrapper {
       padding: 0;
@@ -330,4 +359,23 @@ export const Form = styled.form`
       }
     }
   }
+
+ @keyframes downtop {
+  100% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+}
+
+ @keyframes swiperight {
+  0% {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 `
