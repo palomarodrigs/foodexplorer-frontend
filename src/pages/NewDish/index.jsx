@@ -49,6 +49,10 @@ export function NewDish() {
     formData.append('price', price)
     formData.append('description', description)
 
+    if (newIngredient) {
+      return alert('You need to add the ingredient to create.')
+    }
+
     const priceValue = formData.get('price')
     if (priceValue === '0') {
       alert('The price must be greater than $0!')

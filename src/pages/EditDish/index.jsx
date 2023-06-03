@@ -57,6 +57,10 @@ export function EditDish() {
       return
     }
 
+    if (newIngredient) {
+      return alert('You need to add the ingredient to update.')
+    }
+
     if (Number(price) === 0) {
       alert('The price must be greater than $0!')
       return
