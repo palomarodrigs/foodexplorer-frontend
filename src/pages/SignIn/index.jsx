@@ -18,6 +18,16 @@ export function SignIn() {
 
   function handleSignIn() {
     setIsLoading(true)
+
+    if(!email || !email.includes('@') || !email.includes(".com") || !password){
+      setEmail('')
+      setPassword('')
+      setIsLoading(false)
+      alert("check your email and password")
+      return
+    
+    }
+
     signIn({ email, password })
       .then(() => {
         setIsLoading(false)
@@ -44,6 +54,7 @@ export function SignIn() {
 
         <label htmlFor='email'>Email</label>
         <Input
+        type="email"
           placeholder='Example: example@example.com'
           onChange={(e) => setEmail(e.target.value)}
         />
