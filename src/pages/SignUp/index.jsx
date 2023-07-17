@@ -18,16 +18,20 @@ export function SignUp() {
 
   function handleSignUp() {
     setIsCreating(false)
-    if (!name || !email || !password) {
+
+    if (!name  || !password) {
       return alert('Fill in all fields!')
     }
 
-    if (password.length < 6) {
-      setIsCreating(false)
-      return alert('The password must contain at least 6 characters!')
+    if(!email || !email.includes('@') || !email.includes(".com")){
+      return alert('create a valid email')
     }
 
-    setIsCreating(true)
+    if (password.length < 6) {
+      alert('The password must contain at least 6 characters!')
+      setPassword("")
+      return
+    }
 
     api
       .post('/users', { name, email, password })
@@ -59,12 +63,14 @@ export function SignUp() {
 
         <label htmlFor='email'>Email</label>
         <Input
+          type="email"
           placeholder='Example: example@example.com'
           onChange={(e) => setEmail(e.target.value)}
         />
 
         <label htmlFor='password'>Password</label>
         <Input
+          value={password}
           placeholder='minimum 6 characters'
           type='password'
           onChange={(e) => setPassword(e.target.value)}
